@@ -1,59 +1,65 @@
 // Toggle sidebar
-document.getElementById("menuButton").addEventListener("click", function() {
-    document.getElementById("sidebar").classList.toggle("open");
+const menuButton = document.getElementById("menuButton");
+const sidebar = document.getElementById("sidebar");
+
+menuButton.addEventListener("click", () => {
+    sidebar.classList.toggle("open");
 });
 
 // Close sidebar when close button is clicked
-document.getElementById("closeButton").addEventListener("click", function() {
-    document.getElementById("sidebar").classList.remove("open");
+const closeButton = document.getElementById("closeButton");
+
+closeButton.addEventListener("click", () => {
+    sidebar.classList.remove("open");
 });
 
 // Set current menu item as active
-var menuItems = document.getElementsByClassName("menu-item");
-for (var i = 0; i < menuItems.length; i++) {
-    menuItems[i].addEventListener("click", function() {
-        var current = document.getElementsByClassName("current");
-        if (current.length > 0) {
-            current[0].classList.remove("current");
+const menuItems = document.getElementsByClassName("menu-item");
+
+for (let i = 0; i < menuItems.length; i++) {
+    menuItems[i].addEventListener("click", function () {
+        const current = document.querySelector(".current");
+        if (current) {
+            current.classList.remove("current");
         }
         this.classList.add("current");
     });
-};
+}
 
-document.addEventListener('DOMContentLoaded', function () {
-    const sections = document.querySelectorAll('section');
-    const navLinks = document.querySelectorAll('nav a');
-    const navListItems = document.querySelectorAll('nav ul li a');
+document.addEventListener("DOMContentLoaded", function () {
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll("nav a");
+    const navListItems = document.querySelectorAll("nav ul li a");
 
     // Show the home section by default
-    sections[0].style.display = 'block';
+    sections[0].style.display = "block";
 
     // Add click event listeners to the navigation links
-    navLinks.forEach(function(link) {
-        link.addEventListener('click', function(event) {
+    navLinks.forEach(function (link) {
+        link.addEventListener("click", function (event) {
             event.preventDefault();
-            const target = this.getAttribute('href').substring(1);
+            const target = this.getAttribute("href").substring(1);
             // Hide all sections
-            sections.forEach(function(section) {
-                section.style.display = 'none';
+            sections.forEach(function (section) {
+                section.style.display = "none";
             });
             // Show the target section
-            document.getElementById(target).style.display = 'block';
+            document.getElementById(target).style.display = "block";
         });
     });
 
     // Add "current" class to the first link (Home) by default
-    navListItems[0].classList.add('current');
+    navListItems[0].classList.add("current");
 
     // Add event listener to each link
-    navListItems.forEach(link => {
-        link.addEventListener('click', function(event) {
+    navListItems.forEach((link) => {
+        link.addEventListener("click", function (event) {
             // Remove "current" class from all links
-            navListItems.forEach(link => {
-                link.classList.remove('current');
+            navListItems.forEach((link) => {
+                link.classList.remove("current");
             });
             // Add "current" class to the clicked link
-            this.classList.add('current');
+            this.classList.add("current");
         });
     });
 });
@@ -86,7 +92,8 @@ function createDiceRoller(diceType, diceImageCount) {
                     diceImage.src = diceImages[Math.floor(Math.random() * diceImageCount)]; // Pick a random image
                 }
             }, frameDuration);
-        } else {
+        }
+        else {
             clearInterval(rollInterval);
             isRolling = false;
             diceImage.src = diceImages[Math.floor(Math.random() * diceImageCount)]; // Pick a random image
@@ -109,9 +116,7 @@ createDiceRoller('d10', 10);
 createDiceRoller('d12', 12);
 createDiceRoller('d20', 20);
 
-
-
-// Generators
+// Generators Code
 function generateSentence(generatorId) {
     let wordBank1, wordBank2, wordBank3, wordBank4, wordBank5;
 
@@ -219,7 +224,7 @@ function generateSentence(generatorId) {
             "Many-Legged, Pale creature(s) Brush Past Your Hands", "Edible Mushroom(s)"];
     }
     else {
-        // Add more conditions for additional generators if needed
+        // There shouldn't be more generators, but more can be added if needed
         return;
     }
 
