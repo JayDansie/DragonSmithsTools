@@ -68,19 +68,28 @@ function createDiceRoller(diceType, diceImageCount) {
     const rollButton = document.getElementById(`${diceType}rollButton`);
     let isRolling = false;
     let rollInterval;
+    let totalDuration = 800; // Total duration in milliseconds (1 second)
+    let frameDuration = 50; // 1/20th of a second (50 milliseconds)
 
     rollButton.addEventListener('click', function() {
         if (!isRolling) {
             isRolling = true;
             let rollCount = 0;
+            let elapsedDuration = 0;
             rollInterval = setInterval(function() {
-            diceImage.src = diceImages[rollCount % diceImageCount];
-            rollCount++;
-            }, 25);
-        }
-        else {
+                diceImage.src = diceImages[rollCount % diceImageCount];
+                rollCount++;
+                elapsedDuration += frameDuration;
+                if (elapsedDuration >= totalDuration) {
+                    clearInterval(rollInterval);
+                    isRolling = false;
+                    diceImage.src = diceImages[Math.floor(Math.random() * diceImageCount)]; // Pick a random image
+                }
+            }, frameDuration);
+        } else {
             clearInterval(rollInterval);
             isRolling = false;
+            diceImage.src = diceImages[Math.floor(Math.random() * diceImageCount)]; // Pick a random image
         }
     });
 
@@ -88,6 +97,7 @@ function createDiceRoller(diceType, diceImageCount) {
         if (isRolling) {
             clearInterval(rollInterval);
             isRolling = false;
+            diceImage.src = diceImages[Math.floor(Math.random() * diceImageCount)]; // Pick a random image
         }
     });
 }
@@ -98,6 +108,7 @@ createDiceRoller('d8', 8);
 createDiceRoller('d10', 10);
 createDiceRoller('d12', 12);
 createDiceRoller('d20', 20);
+
 
 
 // Generators
@@ -111,7 +122,7 @@ function generateSentence(generatorId) {
             "Gr", "Haz", "Quin", "Rav", "Til", "U", "Wren", "Xen", "Zu"];
         wordBank2 = ["ina", "anna", "in", "igold", "ida", "ess", "ice", "ette", "ia", "seth", "la",
             "anne", "iana", "line", "lee", "eigh", "etha", "ique", "iam", "ica", "dra", "lin", "na",
-            "ssa", "ta", "sia", "sage", "O", "ca", "dine", "ris", "ria", "", "nis", "ace"];
+            "ssa", "ta", "sia", "sage", "o", "ca", "dine", "ris", "ria", "", "nis", "ace"];
         wordBank3 = ["Silent", "Truth", "Young", "Heart", "Terra", "Stone", "Wild", "Glory", "Meadow",
             "Titan", "Cele", "Begi", "Fern", "Hawk", "Wood", "Spirit", "Bronze", "Claw", "Storm",
             "Proud", "Green", "Snake", "Dead", "Till", "Far", "Lion", "Sul", "Jarl", "Thrall"];
