@@ -1,0 +1,353 @@
+/* Reset some default styles */
+body, ul {
+    margin: 0;
+    padding: 0;
+}
+
+/* Overall layout styles */
+body {
+    padding: 20px;
+    background-image: url('../img/YeOldPaperBackground.png');
+    background-size: cover;
+    background-repeat: repeat-y;
+    text-align: center;
+}
+
+/* Header styles */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(235, 235, 235, 0.5);
+    padding: 20px;
+}
+
+header img {
+    width: 100px;
+    height: 68px;
+}
+
+header, h1 {
+    font-size: 150%;
+    text-align: center;
+    font-family: 'Garamond', serif;
+}
+
+#menuButton {
+    font-size: 24px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+#sidebar {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 300px;
+    height: 100%;
+    background-color: rgba(235, 235, 235, 0.9);
+    transition: right 0.3s ease;
+}
+
+#sidebar.open {
+    right: 0;
+}
+
+nav ul li a.menu-item.current {
+    text-decoration: underline;
+}
+
+#closeButton {
+    font-size: 24px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 20px;
+}
+
+nav ul li {
+    margin-bottom: 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    padding: 5px;
+}
+
+/* Main styles */
+main {
+    background-color: rgba(235, 235, 235, 0.5);
+}
+
+main h2 {
+    margin-left: 5%;
+    padding-top: 2%;
+    font-family: 'Garamond', serif;
+    font-size: 40px;
+}
+
+main p {
+    margin-left: 10%;
+    font-family: 'Garamond', serif;
+    font-size: 20px;
+}
+
+main h3 {
+    margin-left: 10%;
+    font-size: 35px;
+    font-family: 'Garamond', serif;
+}
+
+main img {
+    margin-left: auto;
+    margin-right: 96px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-right: 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    padding: 5px;
+}
+
+/* Main styles */
+#two-columns {
+    display: grid;
+}
+
+.image-column {
+    grid-column: 2;
+    display: flex;
+    flex-direction: column;
+    padding: 2%;
+    padding-top: 0;
+}
+
+.image-column img {
+    width: 100%;
+    height: auto;
+    margin-right: 5%;
+}
+
+figcaption {
+    font-family: 'Garamond', serif;
+    font-size: 16px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.dice {
+    width: 100%;
+    height: auto;
+}
+
+
+.diceRow, .rollButtonRow {
+    grid-column: 1 / span 6;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+.diceRow {
+    align-content: center;
+    grid-row: 1;
+    margin-bottom: 10px;
+}
+
+
+.rollButtonRow {
+    grid-row: 2;
+    padding: 2%;
+}
+
+/* Video Layout */
+
+* {
+    box-sizing: border-box;
+}
+
+.video-container h3 {
+    text-align: center;
+    padding-right: 10%;
+}
+
+.video-container p {
+    text-align: center;
+    padding-left: 22%;
+}
+
+.video-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.video-item {
+    flex-basis: 50%;
+    padding: 10px;
+}
+
+/* Generator Styles */
+#generator h2 {
+    margin-top: 33px;
+} 
+
+.generator-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.generator-content {
+    flex-basis: calc(50% - 10px);
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.generator-content h3 {
+    margin-top: 0;
+    font-size: 30px;
+}
+
+.generator-content p {
+    background-color: rgba(235, 235, 235, 0.5);
+    font-size: 18px;
+}
+
+.generator-content button {
+    margin-top: 10px;
+    margin-left: 10%;
+    margin-bottom: 10%;
+    padding: 8px 16px;
+    font-size: 16px;
+}
+
+#randomSentence1,
+#randomSentence2,
+#randomSentence3,
+#randomSentence4,
+#randomSentence5,
+#randomSentence6,
+#randomSentence7,
+#randomSentence8,
+#randomSentence9,
+#randomSentence10 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 20px;
+}  
+
+
+/* Footer styles */
+footer {
+    padding: 10px;
+    text-align: center;
+    margin-left: 4%;
+}
+
+/* Media queries */
+@media (max-width: 768px) {
+    main {
+        grid-template-columns: 1fr;
+    }
+
+    main h2 {
+        margin-left: 2%;
+    }
+
+    main h3 {
+        margin-left: 2%;
+    }
+
+    .image-column {
+        margin-left: 1.5%;
+        grid-column: 1;
+        margin-bottom: 20px;
+    }
+
+    main p {
+        margin-left: 10%;
+        margin-right: 10%;
+        font-family: 'Garamond', serif;
+        font-size: 20px;
+    }
+
+    .dicecontainer {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .diceRow {
+        grid-column: 1;
+        grid-row-start: 1;
+        grid-row-end: 6;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+    .rollButtonRow {
+        grid-column: 2;
+        grid-row-start: 1;
+        grid-row-end: 6;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-top: 50%;
+        margin-bottom: 50%;
+    }
+
+    .video-item {
+        flex-basis: 100%;
+    }
+
+    .video-container p {
+        text-align: center;
+        padding-left: 1%;
+    }
+
+    .video-container, .video-item, h3 {
+        text-align: center;
+        padding-left: 3.5%;
+    }
+
+    .generator-content {
+        flex-basis: 100%;
+    }
+    
+    .generator-content button {
+        margin-left: 3%;
+    }
+
+    .generator-content h3 {
+        margin-right: 6%;
+    }
+}
+
+/* Show only the Home section */
+section:not(#home) {
+    display: none;
+}
