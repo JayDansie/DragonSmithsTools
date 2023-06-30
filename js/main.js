@@ -137,10 +137,10 @@ function generateSentence(generatorId) {
         wordBank5 = ["The Wise", "The Strong", "The Fearless", "The Old", "The Hopeless", "The Child",
             "The Pathetic", "The Coward", "The Gardener", "The Torch", "The Pitchfork", "The Shield",
             "The Sword", "The Lustrous", "The Rotting", "The Master", "The Skinless", "The Strange",
-            "The Flayed", "The Singer", "The Reaper", "The Mage", "The Soilder", "The Priest", "The Grave Digger",
+            "The Flayed", "The Singer", "The Reaper", "The Mage", "The Soldier", "The Priest", "The Grave Digger",
             "The Giver", "The Inventor", "The Leader", "The Whisperer", "The Sharptoothed", "The Dancer",
             "The Young", "The Brave", "The Mangled", "The Fair", "The Blade", "The Chosen", "The Sunbeam",
-            "The Shadow", "The Cruel", "The Rich", "The Poor", "The Pure"];
+            "The Shadow", "The Cruel", "The Rich", "The Poor", "The Pure", "The Reborn", "The Muscle"];
     }
     else if (generatorId === 2) { // Masculine Names
         wordBank1 = ["Nir", "Ka", "Keg", "Oma", "Nor", "Tas", "Kar", "Li", "Wel", "Wic", "Ji", "Ja",
