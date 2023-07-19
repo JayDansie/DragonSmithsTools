@@ -1,3 +1,13 @@
+/* Changes Made:
+- Adjusted margins and padding For Better Alignment
+- Adjusted font sizes and margins for better readability
+- Ensured css styles are grouped with labels for each section
+- Added notes about the functionality for each css item
+- Added styles for the theme switching buttons
+- Updated the Links to all be funtional instead of plain text
+- Adjusted link color to match the theme better
+*/
+
 /* Reset some default styles */
 body, ul {
     margin: 0;
@@ -8,13 +18,19 @@ body, ul {
 body {
     padding: 20px;
     background-image: url('../img/YeOldPaperBackground.png');
-    background-size: cover;
+    background-size: 100% auto;
     background-repeat: repeat-y;
     text-align: center;
 }
 
+/* Link Style */
+body a {
+    color: rgb(159, 21, 0); /* Set the desired link color in hexadecimal, RGB, or color name */
+}
+
 /* Header styles */
 header {
+    /* Adjust the content positioning and set the background color */
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -23,18 +39,23 @@ header {
 }
 
 header img {
+    /* Size of the header image */
     width: 100px;
     height: 68px;
 }
 
 header, h1 {
+    /* Adjust the text appearance and positioning */
     font-size: 150%;
     text-align: center;
     font-family: 'Garamond', serif;
+    padding-right: 0px;
+    padding-left: 20px;
 }
 
 /* Menu Style */
 #menuButton, #closeButton {
+    /* Set the background, font size, and position of the menu and close buttons */
     font-size: 24px;
     background: transparent;
     border: none;
@@ -43,6 +64,7 @@ header, h1 {
 }
 
 #sidebar {
+    /* Set the size, color, and animation of the side bar */
     position: fixed;
     top: 0;
     right: -300px;
@@ -53,14 +75,17 @@ header, h1 {
 }
 
 #sidebar.open {
+    /* Set the position of the sidebar when it is open */
     right: 0;
 }
 
 nav ul li a.menu-item.current {
+    /* Make the menu text itmes be underlined if they are the current page */
     text-decoration: underline;
 }
 
 nav ul {
+    /* Set the Styles of the menu */
     display: flex;
     flex-direction: column;
     list-style: none;
@@ -68,45 +93,87 @@ nav ul {
 }
 
 nav ul li {
+    /* Set the bottom margin of the menu */
     margin-bottom: 10px;
 }
 
 nav ul li a {
+    /* Set the color and style of the menu text */
     text-decoration: none;
     color: #333;
     padding: 5px;
 }
 
+/* Styles for the light theme/default button */
+#themeButtons {
+    /* Set style of the theme buttons */
+    display: flex;
+    align-items: center;
+}
+
+#sunButton,
+#moonButton {
+    /* Set font size, background, and position of the theme buttons */
+    font-size: 24px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    margin-right: -5px; /* Adjust the negative margin to move the buttons closer */
+}
+
+#moonButton {
+    /* Set bottom margin of the moon button */
+    margin-bottom: -6px; /* Adjust vertical alignment */
+}
+
+#sunButton.current-theme {
+    /* Set background color of the sun button if it is selected */
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+#moonButton.current-theme {
+    /* Set background color of the moon button if it is selected */
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+
 /* Main styles */
 main {
+    /* Set the main background color */
     background-color: rgba(235, 235, 235, 0.5);
 }
 
 main h2, main p, main h3 {
+    /* Set the font for main's h2, p, and h3 */
     font-family: 'Garamond', serif;
 }
 
 main h2 {
+    /* Set the font positioning and size in h2 */
     margin-left: 5%;
     padding-top: 2%;
     font-size: 40px;
 }
 
 main p, main h3 {
+    /* Set the font positioning and size in h3 and p */
     margin-left: 10%;
     font-size: 20px;
 }
 
 main img {
+    /* Set the main img margins */
     margin-left: auto;
     margin-right: 96px;
 }
 
 #two-columns {
+    /* Set up a grid to display content in collumns */
     display: grid;
 }
 
 .image-column {
+    /* Set up the column that contains the image */
     grid-column: 2;
     display: flex;
     flex-direction: column;
@@ -115,12 +182,14 @@ main img {
 }
 
 .image-column img {
+    /* Set the image size and margins */
     width: 100%;
     height: auto;
     margin-right: 5%;
 }
 
 figcaption {
+    /* Set the image caption */
     font-family: 'Garamond', serif;
     font-size: 16px;
     text-align: center;
@@ -129,11 +198,13 @@ figcaption {
 
 /* Dice Roller Styles */
 .dice {
+    /* Set the size of the dice */
     width: 100%;
     height: auto;
 }
 
 .diceRow, .rollButtonRow {
+    /* Set the positioning of the Dice and Buttons */
     grid-column: 1 / span 6;
     display: flex;
     justify-content: space-around;
@@ -141,12 +212,14 @@ figcaption {
 }
 
 .diceRow {
+    /* Align the dice in the Top Row and Set the Margins */
     align-content: center;
     grid-row: 1;
     margin-bottom: 10px;
 }
 
 .rollButtonRow {
+    /* Align the Buttons in the Bottom Row and Set the Margins */
     grid-row: 2;
     padding: 2%;
 }
@@ -154,26 +227,31 @@ figcaption {
 /* Video Layout */
 
 * {
+    /* Set the box sizing */
     box-sizing: border-box;
 }
 
 .video-container h3 {
+    /* Set the header size and postioning */
     font-size: 30px;
     text-align: center;
     padding-right: 10%;
 }
 
 .video-container p {
+    /* Set the video paragraph positioning */
     text-align: center;
     padding-left: 22%;
 }
 
 .video-container {
+    /* Set the text to flex and wrap for all video container class members */
     display: flex;
     flex-wrap: wrap;
 }
 
 .video-item {
+    /* Set the video item style */
     flex-basis: 50%;
     padding: 10px;
 }
@@ -181,32 +259,38 @@ figcaption {
 
 /* Generator Styles */
 #generator h2 {
+    /* Set the h2 top margins */
     margin-top: 33px;
 }
 
 .generator-container {
+    /* Set the style for the generator-container */
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 }
 
 .generator-content {
+    /* Get and set the size and position of the generator content */
     flex-basis: calc(50% - 10px);
     padding: 10px;
     box-sizing: border-box;
 }
 
 .generator-content h3 {
+    /* Set the font size and top margin of h3 */
     margin-top: 0;
     font-size: 30px;
 }
 
 .generator-content p {
+    /* Set the background color and font size of p */
     background-color: rgba(235, 235, 235, 0.5);
     font-size: 18px;
 }
 
 .generator-content button {
+    /* Set the margins and positions of the generator buttons */
     margin-top: 10px;
     margin-left: 10%;
     margin-bottom: 10%;
@@ -215,6 +299,7 @@ figcaption {
 }
 
 #randomSentence1, #randomSentence2, #randomSentence3, #randomSentence4, #randomSentence5, #randomSentence6, #randomSentence7, #randomSentence8, #randomSentence9, #randomSentence10 {
+    /* Set the style for the randomly generated text */
     font-size: 24px;
     font-weight: bold;
     margin-top: 20px;
@@ -222,6 +307,7 @@ figcaption {
 
 /* Footer styles */
 footer {
+    /* Align and set the footer size */
     padding: 10px;
     text-align: center;
     margin-left: 4%;
@@ -230,29 +316,45 @@ footer {
 /* Media queries */
 @media (max-width: 768px) {
     main {
+        /* Make main only 1 collumn on smaller screens */
         grid-template-columns: 1fr;
     }
 
     header img {
+        /* Set the header image size for smaller screens */
         width: 80px;
         height: 48px;
     }
 
+    header h1 {
+        /* Set the header h1 margins for smaller screens */
+        margin-right: 14.5%;
+    }
+
     h1 {
+        /* Set the h1 margins for smaller screens */
         margin-right: 6%;
     }
 
-    main h2, main h3 {
-        margin-left: 2%;
+    main h2 {
+        /* Set the main h2 left margin for smaller screens */
+        margin-left: 5%;
+    }
+
+    main h3 {
+        /* Set the main h3 left margin for smaller screens */
+        margin-left: 3%;
     }
 
     .image-column {
+        /* Adjust the image position for smaller screens */
         margin-left: 1.5%;
         grid-column: 1;
         margin-bottom: 20px;
     }
 
     main p {
+        /* Set the position and font size of main p for smaller screens */
         margin-left: 10%;
         margin-right: 10%;
         font-family: 'Garamond', serif;
@@ -260,11 +362,13 @@ footer {
     }
 
     .dicecontainer {
+        /* Position the Dice for smaller screens */
         display: grid;
         grid-template-columns: 1fr 1fr;
     }
 
     .diceRow {
+        /* Position the Dice to be on the left in a collumn on smaller screens */
         grid-column: 1;
         grid-row-start: 1;
         grid-row-end: 6;
@@ -277,6 +381,7 @@ footer {
     }
 
     .rollButtonRow {
+        /* Position the roll buttons to be in a collumn on the right on smaller screens */
         grid-column: 2;
         grid-row-start: 1;
         grid-row-end: 6;
@@ -288,26 +393,32 @@ footer {
     }
 
     .video-item {
+        /* Adjust the video item flex for smaller screens */
         flex-basis: 100%;
     }
 
     .video-container h3 {
+        /* Adjust the video h3 left margin for smaller screens */
         margin-left: 10%;
     }
-    
+
     .video-container p {
+        /* Adjust the video p right margin for smaller screens */
         margin-right: 30%;
     }
 
     .generator-content {
+        /* Adjust the generator content flex for smaller screens */
         flex-basis: 100%;
     }
-    
+
     .generator-content button {
+        /* Adjust the generator button left margin for smaller screens */
         margin-left: 3%;
     }
 
     .generator-content h3 {
+        /* Adjust the generator h3 right margin for smaller screens */
         margin-right: 6%;
     }
 }
