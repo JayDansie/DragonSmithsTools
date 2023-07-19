@@ -66,10 +66,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Dice Roller Code
 function createDiceRoller(diceType, diceImageCount) {
-    const diceImages = [];
-    for (let i = 1; i <= diceImageCount; i++) {
-        diceImages.push(`img/${diceType}/${diceType}-${i}.png`);
-    }
+    let darkMode = document.body.classList.contains('dark-theme'); // Check if body has 'dark-theme' class
+
     const diceImage = document.getElementById(`${diceType}diceImage`);
     const rollButton = document.getElementById(`${diceType}rollButton`);
     let isRolling = false;
@@ -77,36 +75,52 @@ function createDiceRoller(diceType, diceImageCount) {
     let totalDuration = 800; // Total duration in milliseconds (1 second)
     let frameDuration = 50; // 1/20th of a second (50 milliseconds)
 
-    rollButton.addEventListener('click', function() {
+    // Function to update dice images based on the theme
+    function updateDiceImages() {
+        const diceImages = [];
+        for (let i = 1; i <= diceImageCount; i++) {
+            const imagePath = darkMode
+            ? `img/DarkMode/Dark${diceType}/Dark${diceType}-${i}.png`
+            : `img/${diceType}/${diceType}-${i}.png`;
+            diceImages.push(imagePath);
+        }
+        return diceImages;
+    }
+
+    // Function to roll the dice
+    function rollDice() {
         if (!isRolling) {
             isRolling = true;
             let rollCount = 0;
             let elapsedDuration = 0;
-            rollInterval = setInterval(function() {
+            rollInterval = setInterval(function () {
                 diceImage.src = diceImages[rollCount % diceImageCount];
                 rollCount++;
                 elapsedDuration += frameDuration;
                 if (elapsedDuration >= totalDuration) {
                     clearInterval(rollInterval);
                     isRolling = false;
-                    diceImage.src = diceImages[Math.floor(Math.random() * diceImageCount)]; // Pick a random image
+                    diceImage.src =
+                    diceImages[Math.floor(Math.random() * diceImageCount)]; // Pick a random image
                 }
             }, frameDuration);
         }
-        else {
-            clearInterval(rollInterval);
-            isRolling = false;
-            diceImage.src = diceImages[Math.floor(Math.random() * diceImageCount)]; // Pick a random image
-        }
-    });
+    }
 
-    diceImage.addEventListener('click', function() {
-        if (isRolling) {
-            clearInterval(rollInterval);
-            isRolling = false;
-            diceImage.src = diceImages[Math.floor(Math.random() * diceImageCount)]; // Pick a random image
-        }
-    });
+    rollButton.addEventListener('click', rollDice);
+
+    // Function to handle theme change
+    function handleThemeChange() {
+        darkMode = document.body.classList.contains('dark-theme');
+        diceImages = updateDiceImages();
+    }
+
+    // Watch for changes in theme
+    const observer = new MutationObserver(handleThemeChange);
+    observer.observe(document.body, { attributes: true, attributeFilter: ['class'] });
+
+    // Initial setup
+    let diceImages = updateDiceImages();
 }
 
 createDiceRoller('d4', 4);
@@ -140,7 +154,7 @@ function generateSentence(generatorId) {
             "The Flayed", "The Singer", "The Reaper", "The Mage", "The Soldier", "The Priest", "The Grave Digger",
             "The Giver", "The Inventor", "The Leader", "The Whisperer", "The Sharptoothed", "The Dancer",
             "The Young", "The Brave", "The Mangled", "The Fair", "The Blade", "The Chosen", "The Sunbeam",
-            "The Shadow", "The Cruel", "The Rich", "The Poor", "The Pure", "The Reborn", "The Muscle"];
+            "The Shadow", "The Cruel", "The Rich", "The Poor", "The Pure"];
     }
     else if (generatorId === 2) { // Masculine Names
         wordBank1 = ["Nir", "Ka", "Keg", "Oma", "Nor", "Tas", "Kar", "Li", "Wel", "Wic", "Ji", "Ja",
@@ -230,7 +244,6 @@ function generateSentence(generatorId) {
 
     const randomWord1 = wordBank1[Math.floor(Math.random() * wordBank1.length)];
 
-
     let randomSentence;
     if (generatorId === 1) { // Fem Name
         const randomWord2 = wordBank2[Math.floor(Math.random() * wordBank2.length)];
@@ -308,3 +321,71 @@ function generateSentence(generatorId) {
         document.getElementById("randomSentence10").textContent = randomSentence;
     }
 }
+
+// Theme switching functionality for theme Buttons
+document.addEventListener('DOMContentLoaded', function () {
+    // Get the item IDs
+    const sunButton = document.getElementById('sunButton');
+    const moonButton = document.getElementById('moonButton');
+    const body = document.querySelector('body');
+    const logoImage = document.querySelector('header img');
+    const d4diceImage = document.getElementById('d4diceImage')
+    const d6diceImage = document.getElementById('d6diceImage')
+    const d8diceImage = document.getElementById('d8diceImage')
+    const d10diceImage = document.getElementById('d10diceImage')
+    const d12diceImage = document.getElementById('d12diceImage')
+    const d20diceImage = document.getElementById('d20diceImage')
+    const homeImageElement = document.querySelector('#home .image-column img');
+    const aboutImageElement = document.querySelector('#about .image-column img');
+    const homeDarkImageElement = document.querySelector('#home .image-column img');
+    const aboutDarkImageElement = document.querySelector('#about .image-column img');
+
+    // Update Dice images
+  
+    sunButton.addEventListener('click', function () {
+        // Update the current theme
+        body.classList.remove('dark-theme');
+        sunButton.classList.add('current-theme');
+        moonButton.classList.remove('current-theme');
+
+        // Set the original logo image source
+        logoImage.src = 'img/DSToolsLogo.png'; 
+
+        // Update the Dice Images
+        d4diceImage.src = 'img/d4/d4.png';
+        d6diceImage.src = 'img/d6/d6.png';
+        d8diceImage.src = 'img/d8/d8.png';
+        d10diceImage.src = 'img/d10/d10.png';
+        d12diceImage.src = 'img/d12/d12.png';
+        d20diceImage.src = 'img/d20/d20.png';
+
+        //Change the home and about page src attributes
+        homeImageElement.src = 'img/DnDImage.jpg';
+        aboutImageElement.src = 'img/DnDMadMage.jpeg';
+    });
+  
+    moonButton.addEventListener('click', function () {
+        // Update the current theme
+        body.classList.add('dark-theme');
+        moonButton.classList.add('current-theme');
+        sunButton.classList.remove('current-theme');
+
+        // Set the dark-themed logo image source
+        logoImage.src = 'img/DarkMode/DSToolsDarkLogo.png'; 
+
+        // Update the Dice Images
+        d4diceImage.src = 'img/DarkMode/Darkd4/Darkd4.png';
+        d6diceImage.src = 'img/DarkMode/Darkd6/Darkd6.png';
+        d8diceImage.src = 'img/DarkMode/Darkd8/Darkd8.png';
+        d10diceImage.src = 'img/DarkMode/Darkd10/Darkd10.png';
+        d12diceImage.src = 'img/DarkMode/Darkd12/Darkd12.png';
+        d20diceImage.src = 'img/DarkMode/Darkd20/Darkd20.png';
+
+        //Change the home and about page src attributes
+        homeDarkImageElement.src = 'img/DarkMode/dnd_idrfm.jpeg';
+        aboutDarkImageElement.src = 'img/DarkMode/Storm-Giant.jpeg';
+    });
+});
+  
+
+

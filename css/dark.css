@@ -1,0 +1,109 @@
+/* Changes This Stylesheet Makes:
+- Updates the background image to a black and blue hand drawn background 
+    (The background is not pixelated, it is meant to look that way. I drew it myself)
+- Updates the logo to be white instead of black for visibility on the dark background
+- Updates the dice images to a blue set with white outlines (The dice images change with the theme)
+- Updates the content images on the home and about pages to match the new theme
+- Changes the Text and Button Icons to White for visibility
+- Changes the Content Box Background Color to Dark Grey
+- Changes the Home and About pages to have the image on the left instead of the right (on large screens)
+*/
+
+/* Update the background color of main and header */
+body.dark-theme main,
+body.dark-theme header {
+    background-color: rgba(39, 39, 39, 0.5);
+}
+
+body.dark-theme #two-columns {
+    /* Set up grid to display content in two columns */
+    display: grid;
+    grid-template-columns: auto auto; /* Adjust the widths of the columns */
+}
+
+body.dark-theme .image-column {
+    /* Set up the column that contains the image */
+    grid-column: 1;
+    grid-row: 1;
+    padding: 2%;
+    padding-top: 0;
+}
+
+body.dark-theme .text-column {
+    /* Set up the column that contains the text */
+    grid-column: 2;
+    padding: 0%;
+    padding-right: 10%;
+    margin: 0%;
+    margin-left: -10%; /* Adjust the negative margin to reduce space */
+}
+
+/* Update backgrouund image and change font color to white */
+body.dark-theme {
+    background-image: url('../img/DarkMode/MagesBackground.jpg');
+    color: white;
+}
+
+/* Update the logo to the white version */
+body.dark-theme header img {
+    content: url('../img/DarkMode/DSToolsDarkLogo.png');
+}
+
+/* Update background and font colors */
+body.dark-theme .dark-theme {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+/* Update background color of the theme buttons when they are selected */
+body.dark-theme #moonButton.current-theme,
+body.dark-theme #sunButton.current-theme {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Update the button colors to white */
+body.dark-theme #menuButton,
+body.dark-theme #closeButton,
+body.dark-theme #sunButton,
+body.dark-theme #moonButton {
+    color: white;
+}
+
+/* Update the sidebar backgrond color */
+body.dark-theme #sidebar {
+    background-color: rgba(0, 0, 0, 0.85);
+}
+
+/* Update the text color to white in the menu */
+body.dark-theme #sidebar nav ul li a,
+body.dark-theme #sidebar nav ul li a.menu-item.current {
+    color: white;
+}
+
+/* Update the generator background color */
+body.dark-theme .generator-content p,
+body.dark-theme main {
+    background-color: rgba(39, 39, 39, 0.5);
+}
+
+/* Update the Color of Links */
+body.dark-theme a {
+    color: rgb(128, 0, 255); /* Set the desired link color in hexadecimal, RGB, or color name */
+}
+
+/* Media queries */
+@media (max-width: 768px) {
+    body.dark-theme .text-column {
+        /* Adjust the image position for smaller screens */
+        padding: 0px;
+        margin-left: 0%;
+        grid-column: 1;
+        grid-row: 1;
+        margin-bottom: 20px;
+    }
+
+    body.dark-theme .image-column {
+        /* Adjust the image position for smaller screens */
+        grid-row: 2;
+    }
+}
