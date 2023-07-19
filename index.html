@@ -20,277 +20,278 @@ D&D Player's Handbook, in case the user doesn't have access to a copy of the boo
 
 The "About" page lists the legallitys of the website.
 
-To run this webiste, run index.html, or visit https://jaydansie.github.io/JayDansieProject3.github.io/
+To run this webiste, run index.html, or visit https://jaydansie.github.io/JayDansieDSTools.github.io/
 
  -->
 
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/dark.css" id="theme-stylesheet">
-    <title>Dragon Smith's Tools</title>
-</head>
-
-<body>
-    <header>
-        <!-- Build the Page Header -->
-        <img src="img/DSToolsLogo.png" alt="Logo">
-        <h1>Dragon Smith's Tools</h1>
-        <div id="Buttons">
-            <button id="sunButton">&#9728;</button>
-            <button id="moonButton">&#9790;</button>
-        <button id="menuButton">&#9776;</button>
-        </div>
-    </header>
-      
-      
-
-    <div id="sidebar"> <!-- Build the Pull Out Menu -->
-        <button id="closeButton">&times;</button>
-        <nav>
-            <ul>
-                <li><a href="#home" class="menu-item">Home</a></li>
-                <li><a href="#roller" class="menu-item">Dice Roller</a></li>
-                <li><a href="#generator" class="menu-item">Generators</a></li>
-                <li><a href="#videos" class="menu-item">How To Play D&D</a></li>
-                <li><a href="#about" class="menu-item">About</a></li>
-            </ul>
-        </nav>
-    </div>
-
-    <main>
-        <!-- HOME -->
-        <section id="home">
-            <h2>Home</h2>
-            <div id="two-columns">
-                <div class="text-column">
-                    <h3>Welcome to Dragon Smith's Tools!</h3>
-                    <p>People have been playing Dungeons & Dragons for many decades.<br>
-                        This tabletop game has recently become more popular since the release of the Netflix original series "Stranger Things" and the newly released "Dungeons & Dragons: Honor Among Thieves" movie.<br><br>
-                        Let's be honest, D&D can be costly to start playing.<br>
-                        As more people take an interest in this game, it is only necessary that we make it more accessible and affordable for everyone.<br>
-                        That's where we come in!<br><br>
-                        Here we offer a few tools that can be helpful to any tabletop gamers. <br>
-                        Whether you are a new or experienced player, Dragon Smith's Tools has something for you!<br><br>
-                        Forgot your bag of dice? No worries!<br>
-                        Check out our dice roller!<br>
-                        Building a new character and you need some ideas?<br>
-                        Or are you hosting a campaign and you want to implement easy foraging?<br>
-                        We offer several generators that can help get you started!<br>
-                        Are you new to D&D and don't know where to start?<br>
-                        Check out some of our suggested videos about how to play D&D!<br><br>
-                        For more information about Dragon Smith's Tools, visit the About page.<br>
-
-                    </p>
-                </div>
-                <div class="image-column">
-                    <figure>
-                        <img src="img/DnDImage.jpg" alt="Image">
-                        <figcaption>Wizards of The Coast LLC. Artwork. Dungeons &amp; Dragons. Retrieved July 19, 2023, from <a href>https://dnd.wizards.com/media-gallery.</a></figcaption>
-                    </figure>
-                </div>
-            </div>
-        </section>
-
-        <!-- ROLLER -->
-        <section id="roller">
-            <h2>Dice Roller</h2>
-            <div class='dicecontainer'>
-                <div class="diceRow">
-                    <div class="dice">
-                        <div id="d4diceContainer">
-                            <img id="d4diceImage" class="dice" src="img/d4/d4.png" alt="D4">
-                        </div>
-                    </div>
-                    <div class="dice">
-                        <div id="d6diceContainer">
-                            <img id="d6diceImage" class="dice" src="img/d6/d6.png" alt="D6">
-                        </div>
-                    </div>
-                    <div class="dice">
-                        <div id="d8diceContainer">
-                            <img id="d8diceImage" class="dice" src="img/d8/d8.png" alt="D8">
-                        </div>
-                    </div>
-                    <div class="dice">
-                        <div id="d10diceContainer">
-                            <img id="d10diceImage" class="dice" src="img/d10/d10.png" alt="D10">
-                        </div>
-                    </div>
-                    <div class="dice">
-                        <div id="d12diceContainer">
-                            <img id="d12diceImage" class="dice" src="img/d12/d12.png" alt="D12">
-                        </div>
-                    </div>
-                    <div class="dice">
-                        <div id="d20diceContainer">
-                            <img id="d20diceImage" class="dice" src="img/d20/d20.png" alt="D20">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="rollButtonRow">
-                    <button id="d4rollButton">Roll D4</button>
-                    <button id="d6rollButton">Roll D6</button>
-                    <button id="d8rollButton">Roll D8</button>
-                    <button id="d10rollButton">Roll D10</button>
-                    <button id="d12rollButton">Roll D12</button>
-                    <button id="d20rollButton">Roll D20</button>
-                </div>
-            </div>
-        </section>
-
-        <!-- GENERATOR -->
-        <section id="generator">
-            <h2>Generators</h2>
-
-            <div class="generator-container">
-                <div class="generator-content">
-                    <h3>Feminine Name Generator</h3>
-                    <p id="randomSentence1" class="generator-sentence">Click Button to Generate</p>
-                    <button onclick="generateSentence(1)">Generate Sentence</button>
-                </div>
-
-                <div class="generator-content">
-                    <h3>Masculine Name Generator</h3>
-                    <p id="randomSentence2" class="generator-sentence">Click Button to Generate</p>
-                    <button onclick="generateSentence(2)">Generate Sentence</button>
-                </div>
-                <div class="generator-content">
-                    <h3>Race Generator</h3>
-                    <p id="randomSentence3" class="generator-sentence">Click Button to Generate</p>
-                    <button onclick="generateSentence(3)">Generate Sentence</button>
-                </div>
-
-                <div class="generator-content">
-                    <h3>Class Generator</h3>
-                    <p id="randomSentence4" class="generator-sentence">Click Button to Generate</p>
-                    <button onclick="generateSentence(4)">Generate Sentence</button>
-                </div>
-                <div class="generator-content">
-                    <h3>Background Generator</h3>
-                    <p id="randomSentence5" class="generator-sentence">Click Button to Generate</p>
-                    <button onclick="generateSentence(5)">Generate Sentence</button>
-                </div>
-
-                <div class="generator-content">
-                    <h3>Alignment Generator</h3>
-                    <p id="randomSentence6" class="generator-sentence">Click Button to Generate</p>
-                    <button onclick="generateSentence(6)">Generate Sentence</button>
-                </div>
-                <div class="generator-content">
-                    <h3>Grassland and Forest Foraged Loot Generator</h3>
-                    <p id="randomSentence7" class="generator-sentence">Click Button to Generate</p>
-                    <button onclick="generateSentence(7)">Generate Sentence</button>
-                </div>
-
-                <div class="generator-content">
-                    <h3>Rocky Terrain Foraged Loot Generator</h3>
-                    <p id="randomSentence8" class="generator-sentence">Click Button to Generate</p>
-                    <button onclick="generateSentence(8)">Generate Sentence</button>
-                </div>
-                <div class="generator-content">
-                    <h3>Aquatic Foraged Loot Generator</h3>
-                    <p id="randomSentence9" class="generator-sentence">Click Button to Generate</p>
-                    <button onclick="generateSentence(9)">Generate Sentence</button>
-                </div>
-
-                <div class="generator-content">
-                    <h3>Cave Foraged Loot Generator</h3>
-                    <p id="randomSentence10" class="generator-sentence">Click Button to Generate</p>
-                    <button onclick="generateSentence(10)">Generate Sentence</button>
-                </div>
-            </div>
-        </section>
-
-        <!-- VIDEOS -->
-        <section id="videos">
-            <h2>How to Play D&D</h2>
-            <div class="video-container">
-                <div class="video-item">
-                    <h3>How To Play D&D Pt. 1</h3>
-                    <iframe width="100%" height="315" src="https://www.youtube.com/embed/0kwRAlDziiY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                    <figcaption>The team at "Tabletop Terrors" gives an introduction to what D&D is, and how the gaming mechanics work</figcaption>
-                </div>
-
-                <div class="video-item">
-                    <h3>How To Play D&D Pt. 2</h3>
-                    <iframe width="100%" height="315" src="https://www.youtube.com/embed/VP45RUxHgJg" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                    <figcaption>The team at "Tabletop Terrors" continues discussing what D&D is, and how the gaming mechanics work.</figcaption>
-                </div>
-
-                <div class="video-item">
-                    <h3>Ability Scores</h3>
-                    <iframe width="100%" height="315" src="https://www.youtube.com/embed/Z4-0lbZ8eGE" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                    <figcaption>The team at "Tabletop Terrors" goes into detail about Ability Scores, and provides some resources for generating them.</figcaption>
-                </div>
-
-                <div class="video-item">
-                    <h3>Character Options</h3>
-                    <iframe width="100%" height="315" src="https://www.youtube.com/embed/DGNJZDzGO5w" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                    <figcaption>The team at "Tabletop Terrors" gives a crash course in some of the character options in D&D.</figcaption>
-                </div>
-
-                <div class="video-item">
-                    <h3>How to Build a Character</h3>
-                    <iframe width="100%" height="315" src="https://www.youtube.com/embed/hLfD07RPAQY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                    <figcaption>The team at "Tabletop Terrors" shows us how to effectively build a D&D character.</figcaption>
-                </div>
-
-                <div class="video-item">
-                    <h3>Magic and Spellcasting</h3>
-                    <iframe width="100%" height="315" src="https://www.youtube.com/embed/UW4yIjGMPnY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                    <figcaption>The team at "Tabletop Terrors" discusses the mechanics of magic and spellcasting in D&D.</figcaption>
-                </div>
-
-                <p><a href="https://orkerhulen.dk/onewebmedia/DnD%205e%20Players%20Handbook%20%28BnW%20OCR%29.pdf">Click Here to Read the D&D 5th Edition Player's Handbook</a></p>
-            </div>
-        </section>
-
-        <!-- ABOUT -->
-        <section id="about">
-            <h2>About</h2>
-            <!-- More page content goes here -->
-            <div id="two-columns">
-                <div class="text-column">
-                    <p>Dragon Smith's Tools is not affiliated with Hasbro or Wizards of the Coast LLC branding. <br>
-                        Dragon Smith's Tools does not possess copywriting privileges of the names "Dungeons & Dragons" and "D&D"<br>
-                        Dragon Smith's Tools is a personal project for personal use and college class assignment purposes.<br>
-                        Dragon Smith's Tools does not sell your data, nor does it receive monetary gains.<br><br>
-                        All videos and linked content on Dragon Smith's Tools belong to their respected owners<br>
-                        Home page image (Light Mode): Wizards of The Coast LLC. (2021). Dungeons &amp; Dragons. Retrieved July 19, 2023, from <a href>https://dnd.wizards.com/media-gallery.</a><br>
-                        Home page image (Dark Mode): Wizards of The Coast LLC. (2020). Dungeons &amp; Dragons. Retrieved July 19, 2023, from <a href>https://dnd.wizards.com/media-gallery.</a><br>
-                        About page image (Light Mode): Wizards of The Coast LLC. (2018). Dungeons &amp; Dragons. Retrieved July 19, 2023, from <a href>https://dnd.wizards.com/media-gallery.</a><br>
-                        About page image (Dark Mode): Wizards of The Coast LLC. (2016). Dungeons &amp; Dragons. Retrieved July 19, 2023, from <a href>https://dnd.wizards.com/media-gallery.</a><br><br>
-                        Dragon Smith's Tools Website designed by Jay Dansie.<br>
-                        Dragon Smith's Tools Logo Art, designed by Jay Dansie (with an AI-Generated sword image).<br>
-                        Dragon Smith's Tools Dice Set Art, designed by Jay Dansie.<br>
-                        Dragon Smith's Tools Background Art, designed by Jay Dansie.<br>
-                        Dragon Smith's Tools Name and Loot Generators made by Jay Dansie, with word bank assistance from Melanie Gomez and Lucile Ormond.<br><br>
-                        Thank You for Visiting Dragon Smith's Tools!
-                    </p>
-                </div>
-                <div class="image-column">
-                    <figure>
-                        <img src="img/DnDMadMage.jpeg" alt="Image">
-                        <figcaption>Wizards of The Coast LLC. Artwork. Dungeons &amp; Dragons. Retrieved July 19, 2023, from <a href>https://dnd.wizards.com/media-gallery.</a></figcaption>
-                    </figure>
-                </div>
-            </div>
-
-
-        </section>
-    </main>
-
-    <footer> <!-- Build the Website Footer -->
-        <p>&copy; 2023 Jay Dansie</p>
-    </footer>
-
-    <script src="js/main.js"></script>
-</body>
-
-</html>
+ <!DOCTYPE html>
+ <html lang="en">
+ 
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="css/main.css">
+     <link rel="stylesheet" href="css/dark.css" id="theme-stylesheet">
+     <title>Dragon Smith's Tools</title>
+ </head>
+ 
+ <body>
+     <header>
+         <!-- Build the Page Header -->
+         <img src="img/DSToolsLogo.png" alt="Logo">
+         <h1>Dragon Smith's Tools</h1>
+         <div id="Buttons">
+             <button id="sunButton">&#9728;</button>
+             <button id="moonButton">&#9790;</button>
+         <button id="menuButton">&#9776;</button>
+         </div>
+     </header>
+       
+       
+ 
+     <div id="sidebar"> <!-- Build the Pull Out Menu -->
+         <button id="closeButton">&times;</button>
+         <nav>
+             <ul>
+                 <li><a href="#home" class="menu-item">Home</a></li>
+                 <li><a href="#roller" class="menu-item">Dice Roller</a></li>
+                 <li><a href="#generator" class="menu-item">Generators</a></li>
+                 <li><a href="#videos" class="menu-item">How To Play D&D</a></li>
+                 <li><a href="#about" class="menu-item">About</a></li>
+             </ul>
+         </nav>
+     </div>
+ 
+     <main>
+         <!-- HOME -->
+         <section id="home">
+             <h2>Home</h2>
+             <div id="two-columns">
+                 <div class="text-column">
+                     <h3>Welcome to Dragon Smith's Tools!</h3>
+                     <p>People have been playing Dungeons & Dragons for many decades.<br>
+                         This tabletop game has recently become more popular since the release of the Netflix original series "Stranger Things" and the newly released "Dungeons & Dragons: Honor Among Thieves" movie.<br><br>
+                         Let's be honest, D&D can be costly to start playing.<br>
+                         As more people take an interest in this game, it is only necessary that we make it more accessible and affordable for everyone.<br>
+                         That's where we come in!<br><br>
+                         Here we offer a few tools that can be helpful to any tabletop gamers. <br>
+                         Whether you are a new or experienced player, Dragon Smith's Tools has something for you!<br><br>
+                         Forgot your bag of dice? No worries!<br>
+                         Check out our dice roller!<br>
+                         Building a new character and you need some ideas?<br>
+                         Or are you hosting a campaign and you want to implement easy foraging?<br>
+                         We offer several generators that can help get you started!<br>
+                         Are you new to D&D and don't know where to start?<br>
+                         Check out some of our suggested videos about how to play D&D!<br><br>
+                         For more information about Dragon Smith's Tools, visit the About page.<br>
+ 
+                     </p>
+                 </div>
+                 <div class="image-column">
+                     <figure>
+                         <img src="img/DnDImage.jpg" alt="Image">
+                         <figcaption>Wizards of The Coast LLC. Artwork. Dungeons &amp; Dragons. Retrieved July 19, 2023, from <a href>https://dnd.wizards.com/media-gallery.</a></figcaption>
+                     </figure>
+                 </div>
+             </div>
+         </section>
+ 
+         <!-- ROLLER -->
+         <section id="roller">
+             <h2>Dice Roller</h2>
+             <div class='dicecontainer'>
+                 <div class="diceRow">
+                     <div class="dice">
+                         <div id="d4diceContainer">
+                             <img id="d4diceImage" class="dice" src="img/d4/d4.png" alt="D4">
+                         </div>
+                     </div>
+                     <div class="dice">
+                         <div id="d6diceContainer">
+                             <img id="d6diceImage" class="dice" src="img/d6/d6.png" alt="D6">
+                         </div>
+                     </div>
+                     <div class="dice">
+                         <div id="d8diceContainer">
+                             <img id="d8diceImage" class="dice" src="img/d8/d8.png" alt="D8">
+                         </div>
+                     </div>
+                     <div class="dice">
+                         <div id="d10diceContainer">
+                             <img id="d10diceImage" class="dice" src="img/d10/d10.png" alt="D10">
+                         </div>
+                     </div>
+                     <div class="dice">
+                         <div id="d12diceContainer">
+                             <img id="d12diceImage" class="dice" src="img/d12/d12.png" alt="D12">
+                         </div>
+                     </div>
+                     <div class="dice">
+                         <div id="d20diceContainer">
+                             <img id="d20diceImage" class="dice" src="img/d20/d20.png" alt="D20">
+                         </div>
+                     </div>
+                 </div>
+ 
+                 <div class="rollButtonRow">
+                     <button id="d4rollButton">Roll D4</button>
+                     <button id="d6rollButton">Roll D6</button>
+                     <button id="d8rollButton">Roll D8</button>
+                     <button id="d10rollButton">Roll D10</button>
+                     <button id="d12rollButton">Roll D12</button>
+                     <button id="d20rollButton">Roll D20</button>
+                 </div>
+             </div>
+         </section>
+ 
+         <!-- GENERATOR -->
+         <section id="generator">
+             <h2>Generators</h2>
+ 
+             <div class="generator-container">
+                 <div class="generator-content">
+                     <h3>Feminine Name Generator</h3>
+                     <p id="randomSentence1" class="generator-sentence">Click Button to Generate</p>
+                     <button onclick="generateSentence(1)">Generate Sentence</button>
+                 </div>
+ 
+                 <div class="generator-content">
+                     <h3>Masculine Name Generator</h3>
+                     <p id="randomSentence2" class="generator-sentence">Click Button to Generate</p>
+                     <button onclick="generateSentence(2)">Generate Sentence</button>
+                 </div>
+                 <div class="generator-content">
+                     <h3>Race Generator</h3>
+                     <p id="randomSentence3" class="generator-sentence">Click Button to Generate</p>
+                     <button onclick="generateSentence(3)">Generate Sentence</button>
+                 </div>
+ 
+                 <div class="generator-content">
+                     <h3>Class Generator</h3>
+                     <p id="randomSentence4" class="generator-sentence">Click Button to Generate</p>
+                     <button onclick="generateSentence(4)">Generate Sentence</button>
+                 </div>
+                 <div class="generator-content">
+                     <h3>Background Generator</h3>
+                     <p id="randomSentence5" class="generator-sentence">Click Button to Generate</p>
+                     <button onclick="generateSentence(5)">Generate Sentence</button>
+                 </div>
+ 
+                 <div class="generator-content">
+                     <h3>Alignment Generator</h3>
+                     <p id="randomSentence6" class="generator-sentence">Click Button to Generate</p>
+                     <button onclick="generateSentence(6)">Generate Sentence</button>
+                 </div>
+                 <div class="generator-content">
+                     <h3>Grassland and Forest Foraged Loot Generator</h3>
+                     <p id="randomSentence7" class="generator-sentence">Click Button to Generate</p>
+                     <button onclick="generateSentence(7)">Generate Sentence</button>
+                 </div>
+ 
+                 <div class="generator-content">
+                     <h3>Rocky Terrain Foraged Loot Generator</h3>
+                     <p id="randomSentence8" class="generator-sentence">Click Button to Generate</p>
+                     <button onclick="generateSentence(8)">Generate Sentence</button>
+                 </div>
+                 <div class="generator-content">
+                     <h3>Aquatic Foraged Loot Generator</h3>
+                     <p id="randomSentence9" class="generator-sentence">Click Button to Generate</p>
+                     <button onclick="generateSentence(9)">Generate Sentence</button>
+                 </div>
+ 
+                 <div class="generator-content">
+                     <h3>Cave Foraged Loot Generator</h3>
+                     <p id="randomSentence10" class="generator-sentence">Click Button to Generate</p>
+                     <button onclick="generateSentence(10)">Generate Sentence</button>
+                 </div>
+             </div>
+         </section>
+ 
+         <!-- VIDEOS -->
+         <section id="videos">
+             <h2>How to Play D&D</h2>
+             <div class="video-container">
+                 <div class="video-item">
+                     <h3>How To Play D&D Pt. 1</h3>
+                     <iframe width="100%" height="315" src="https://www.youtube.com/embed/0kwRAlDziiY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                     <figcaption>The team at "Tabletop Terrors" gives an introduction to what D&D is, and how the gaming mechanics work</figcaption>
+                 </div>
+ 
+                 <div class="video-item">
+                     <h3>How To Play D&D Pt. 2</h3>
+                     <iframe width="100%" height="315" src="https://www.youtube.com/embed/VP45RUxHgJg" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                     <figcaption>The team at "Tabletop Terrors" continues discussing what D&D is, and how the gaming mechanics work.</figcaption>
+                 </div>
+ 
+                 <div class="video-item">
+                     <h3>Ability Scores</h3>
+                     <iframe width="100%" height="315" src="https://www.youtube.com/embed/Z4-0lbZ8eGE" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                     <figcaption>The team at "Tabletop Terrors" goes into detail about Ability Scores, and provides some resources for generating them.</figcaption>
+                 </div>
+ 
+                 <div class="video-item">
+                     <h3>Character Options</h3>
+                     <iframe width="100%" height="315" src="https://www.youtube.com/embed/DGNJZDzGO5w" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                     <figcaption>The team at "Tabletop Terrors" gives a crash course in some of the character options in D&D.</figcaption>
+                 </div>
+ 
+                 <div class="video-item">
+                     <h3>How to Build a Character</h3>
+                     <iframe width="100%" height="315" src="https://www.youtube.com/embed/hLfD07RPAQY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                     <figcaption>The team at "Tabletop Terrors" shows us how to effectively build a D&D character.</figcaption>
+                 </div>
+ 
+                 <div class="video-item">
+                     <h3>Magic and Spellcasting</h3>
+                     <iframe width="100%" height="315" src="https://www.youtube.com/embed/UW4yIjGMPnY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                     <figcaption>The team at "Tabletop Terrors" discusses the mechanics of magic and spellcasting in D&D.</figcaption>
+                 </div>
+ 
+                 <p><a href="https://orkerhulen.dk/onewebmedia/DnD%205e%20Players%20Handbook%20%28BnW%20OCR%29.pdf">Click Here to Read the D&D 5th Edition Player's Handbook</a></p>
+             </div>
+         </section>
+ 
+         <!-- ABOUT -->
+         <section id="about">
+             <h2>About</h2>
+             <!-- More page content goes here -->
+             <div id="two-columns">
+                 <div class="text-column">
+                     <p>Dragon Smith's Tools is not affiliated with Hasbro or Wizards of the Coast LLC branding. <br>
+                         Dragon Smith's Tools does not possess copywriting privileges of the names "Dungeons & Dragons" and "D&D"<br>
+                         Dragon Smith's Tools is a personal project for personal use and college class assignment purposes.<br>
+                         Dragon Smith's Tools does not sell your data, nor does it receive monetary gains.<br><br>
+                         All videos and linked content on Dragon Smith's Tools belong to their respected owners<br>
+                         Home page image (Light Mode): Wizards of The Coast LLC. (2021). Dungeons &amp; Dragons. Retrieved July 19, 2023, from <a href>https://dnd.wizards.com/media-gallery.</a><br>
+                         Home page image (Dark Mode): Wizards of The Coast LLC. (2020). Dungeons &amp; Dragons. Retrieved July 19, 2023, from <a href>https://dnd.wizards.com/media-gallery.</a><br>
+                         About page image (Light Mode): Wizards of The Coast LLC. (2018). Dungeons &amp; Dragons. Retrieved July 19, 2023, from <a href>https://dnd.wizards.com/media-gallery.</a><br>
+                         About page image (Dark Mode): Wizards of The Coast LLC. (2016). Dungeons &amp; Dragons. Retrieved July 19, 2023, from <a href>https://dnd.wizards.com/media-gallery.</a><br><br>
+                         Dragon Smith's Tools Website designed by Jay Dansie.<br>
+                         Dragon Smith's Tools Logo Art, designed by Jay Dansie (with an AI-Generated sword image).<br>
+                         Dragon Smith's Tools Dice Set Art, designed by Jay Dansie.<br>
+                         Dragon Smith's Tools Background Art, designed by Jay Dansie.<br>
+                         Dragon Smith's Tools Name and Loot Generators made by Jay Dansie, with word bank assistance from Melanie Gomez, Katelyn Hollinger, and Lucile Ormond.<br><br>
+                         Thank You for Visiting Dragon Smith's Tools!
+                     </p>
+                 </div>
+                 <div class="image-column">
+                     <figure>
+                         <img src="img/DnDMadMage.jpeg" alt="Image">
+                         <figcaption>Wizards of The Coast LLC. Artwork. Dungeons &amp; Dragons. Retrieved July 19, 2023, from <a href>https://dnd.wizards.com/media-gallery.</a></figcaption>
+                     </figure>
+                 </div>
+             </div>
+ 
+ 
+         </section>
+     </main>
+ 
+     <footer> <!-- Build the Website Footer -->
+         <p>&copy; 2023 Jay Dansie</p>
+     </footer>
+ 
+     <script src="js/main.js"></script>
+ </body>
+ 
+ </html>
+ 
