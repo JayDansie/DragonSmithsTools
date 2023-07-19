@@ -238,16 +238,16 @@ figcaption {
     padding-right: 10%;
 }
 
-.video-container p {
-    /* Set the video paragraph positioning */
-    text-align: center;
-    padding-left: 22%;
-}
-
 .video-container {
     /* Set the text to flex and wrap for all video container class members */
     display: flex;
     flex-wrap: wrap;
+}
+
+.video-container p {
+    /* Set the video paragraph positioning */
+    padding-left: 20%;
+    text-align: center;
 }
 
 .video-item {
