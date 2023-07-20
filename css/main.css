@@ -331,13 +331,17 @@ footer {
 
     header h1 {
         /* Set the header h1 margins for smaller screens */
-        margin-left: 2%;
+        margin-left: 1%;
     }
 
     #Buttons {
         /* Adjust the button positions and sizes */
         display: flex;
         font-size: 20px;
+    }
+
+    #sunButton, #moonButton {
+        margin-right: -6px;
     }
 
     main h3 {
