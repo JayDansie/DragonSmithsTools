@@ -135,49 +135,63 @@ function generateSentence(generatorId) {
     let wordBank1, wordBank2, wordBank3, wordBank4, wordBank5;
 
     if (generatorId === 1) { // Feminine Names
-        wordBank1 = ["Selest", "Merr", "Fel", "Clair", "Ant", "Nyn", "Yur", "Vir", "Ash", "Luc", "Jo",
-            "Valer", "Joce", "Am", "Bay", "Arl", "Mon", "Mir", "Kasan", "Lin", "Iwa", "Neri", "Nep",
-            "Ambro", "Pud", "Pun", "O", "Sage", "Barbar", "Sy", "Evo", "I", "Rose", "Fer", "D", "Fae",
-            "Gr", "Haz", "Quin", "Rav", "Til", "U", "Wren", "Xen", "Zu"];
-        wordBank2 = ["ina", "anna", "in", "igold", "ida", "ess", "ice", "ette", "ia", "seth", "la",
-            "anne", "iana", "line", "lee", "eigh", "etha", "ique", "iam", "ica", "dra", "lin", "na",
-            "ssa", "ta", "sia", "sage", "o", "ca", "dine", "ris", "ria", "", "nis", "ace"];
+        wordBank1 = ["Selest", "Mer", "Fel", "Clair", "Ant", "Nyn", "Yur", "Vir", "Ash", "Luc", "Jo",
+            "Valer", "Joce", "Am", "Ama", "Bay", "Arl", "Mon", "Mir", "Kasan", "Lin", "Iwa", "Neri",
+            "Nep", "Ambro", "Pud", "Pun", "O", "Sage", "Barbar", "Sy", "Evo", "I", "Rose", "Fer",
+            "D", "Fae", "Gr", "Haz", "Quin", "Rav", "Til", "U", "Wren", "Xen", "Zu", "Az", "Lu",
+            "Oli", "Em", "Charl", "Sop", "Isa", "Eva", "Lu", "Har", "Cam", "Scar", "Elea", "Vio",
+            "Gia", "Gr"];
+        wordBank2 = ["ina", "anna", "in", "igold", "rida", "ess", "ice", "ette", "elle", "ia", "seth",
+            "la", "anne", "iana", "line", "lee", "eigh", "etha", "ique", "iam", "ica", "dra", "lin",
+            "na", "ssa", "ta", "sia", "sage", "O", "ca", "dine", "ris", "ria", "", "nis", "ace", "ra",
+            "ian", "ya", "via", "ma", "otte", "hia", "bella", "lyn", "na", "per", "ila", "lett", "nor",
+            "let", "ace"];
         wordBank3 = ["Silent", "Truth", "Young", "Heart", "Terra", "Stone", "Wild", "Glory", "Meadow",
             "Titan", "Cele", "Begi", "Fern", "Hawk", "Wood", "Spirit", "Bronze", "Claw", "Storm",
-            "Proud", "Green", "Snake", "Dead", "Till", "Far", "Lion", "Sul", "Jarl", "Thrall"];
+            "Proud", "Green", "Snake", "Dead", "Till", "Far", "Lion", "Sul", "Jarl", "Thrall", "Year",
+            "Wind", "Ash", "Marble", "Bozz", "Yar", "Font", "Cru", "Ve", "Dea"];
         wordBank4 = ["brook", "moon", "breeze", "blood", "maw", "walker", "binder", "blight", "fallow",
             "shade", "brimbor", "son", "way", "crag", "toe", "sworn", "brand", "sun", "beam", "thorne",
-            "spark", "woods", "borne", "man", "singer", "brace", "ly", "bearer", "rot", ""];
+            "spark", "woods", "borne", "man", "singer", "brace", "ly", "bearer", "rot", "ward", "bluff",
+            "maw", "elli", "row", "aine", "so", "ga", "con"];
         wordBank5 = ["The Wise", "The Strong", "The Fearless", "The Old", "The Hopeless", "The Child",
             "The Pathetic", "The Coward", "The Gardener", "The Torch", "The Pitchfork", "The Shield",
             "The Sword", "The Lustrous", "The Rotting", "The Master", "The Skinless", "The Strange",
-            "The Flayed", "The Singer", "The Reaper", "The Mage", "The Soldier", "The Priest", "The Grave Digger",
-            "The Giver", "The Inventor", "The Leader", "The Whisperer", "The Sharptoothed", "The Dancer",
-            "The Young", "The Brave", "The Mangled", "The Fair", "The Blade", "The Chosen", "The Sunbeam",
-            "The Shadow", "The Cruel", "The Rich", "The Poor", "The Pure"];
+            "The Flayed", "The Singer", "The Reaper", "The Mage", "The Soilder", "The Priest",
+            "The Grave Digger", "The Giver", "The Inventor", "The Leader", "The Whisperer",
+            "The Sharptoothed", "The Dancer", "The Young", "The Brave", "The Mangled", "The Fair",
+            "The Blade", "The Chosen", "The Sunbeam", "The Shadow", "The Cruel", "The Rich", "The Poor",
+            "The Pure", "The Fool", "The Star", "The Wicked", "The Monarch", "The Druid", " The Fighter",
+            "The Oracle", "The Liar", "The Protector", "The Provider", "The Shapeshifter", "The Humane"];
     }
     else if (generatorId === 2) { // Masculine Names
         wordBank1 = ["Nir", "Ka", "Keg", "Oma", "Nor", "Tas", "Kar", "Li", "Wel", "Wic", "Ji", "Ja",
             "Ash", "Art", "Ado", "Rey", "U", "Dome", "Dami", "Ha", "Sa", "Hay", "Ox", "Deve", "Y",
             "Rans", "Wyn", "Chan", "La", "New", "Mal", "Bald", "Pack", "Nico", "K", "Guada", "Dra",
             "Don", "Dawn", "Stra", "Crow", "Med", "Shad", "Zin", "Bar", "Stan", "Mor", "Nord", "Fin",
-            "Road", "Bil", "O", "Mit", "Bow", "Cri", "El", "Ilor", "Pon", "Quil", "Va", "Xe"];
+            "Road", "Bil", "O", "Mit", "Bow", "Cri", "El", "Ilor", "Pon", "Quil", "Va", "Xe", "Az",
+            "Lu", "Luci", "Kan", "Theo", "Seb", "Aar", "Ma"];
         wordBank2 = ["din", "mu", "an", "ri", "well", "so", "el", "am", "borne", "lif", "ley", "ke",
             "us", "nis", "mond", "do", "nic", "ano", "io", "ul", "den", "ford", "rell", "dam", "ler",
-            "ne", "bold", "win", "ard", "las", "nox", "lupa", "go", "",];
+            "ne", "bold", "win", "ard", "las", "nox", "lupa", "go", "", "rael", "fer", "dor", "astian",
+            "on", "son"];
         wordBank3 = ["Silent", "Truth", "Young", "Heart", "Terra", "Stone", "Wild", "Glory", "Meadow",
             "Titan", "Cele", "Begi", "Fern", "Hawk", "Wood", "Spirit", "Bronze", "Claw", "Storm",
-            "Proud", "Green", "Snake", "Dead", "Till", "Far", "Lion", "Sul", "Jarl", "Thrall"];
+            "Proud", "Green", "Snake", "Dead", "Till", "Far", "Lion", "Sul", "Jarl", "Thrall", "Year",
+            "Wind", "Ash", "Marble", "Bozz", "Yar", "Font", "Cru", "Ve", "Dea"];
         wordBank4 = ["brook", "moon", "breeze", "blood", "maw", "walker", "binder", "blight", "fallow",
             "shade", "brimbor", "son", "way", "crag", "toe", "sworn", "brand", "sun", "beam", "thorne",
-            "spark", "woods", "borne", "man", "singer", "brace", "ly", "bearer", "rot", ""];
+            "spark", "woods", "borne", "man", "singer", "brace", "ly", "bearer", "rot", "ward", "bluff",
+            "maw", "elli", "row", "aine", "so", "ga", "con"];
         wordBank5 = ["The Wise", "The Strong", "The Fearless", "The Old", "The Hopeless", "The Child",
             "The Pathetic", "The Coward", "The Gardener", "The Torch", "The Pitchfork", "The Shield",
             "The Sword", "The Lustrous", "The Rotting", "The Master", "The Skinless", "The Strange",
-            "The Flayed", "The Singer", "The Reaper", "The Mage", "The Soilder", "The Priest", "The Grave Digger",
-            "The Giver", "The Inventor", "The Leader", "The Whisperer", "The Sharptoothed", "The Dancer",
-            "The Young", "The Brave", "The Mangled", "The Fair", "The Blade", "The Chosen", "The Sunbeam",
-            "The Shadow", "The Cruel", "The Rich", "The Poor", "The Pure"];
+            "The Flayed", "The Singer", "The Reaper", "The Mage", "The Soilder", "The Priest",
+            "The Grave Digger", "The Giver", "The Inventor", "The Leader", "The Whisperer",
+            "The Sharptoothed", "The Dancer", "The Young", "The Brave", "The Mangled", "The Fair",
+            "The Blade", "The Chosen", "The Sunbeam", "The Shadow", "The Cruel", "The Rich", "The Poor",
+            "The Pure", "The Fool", "The Star", "The Wicked", "The Monarch", "The Druid", " The Fighter",
+            "The Oracle", "The Liar", "The Protector", "The Provider", "The Shapeshifter", "The Humane"];
     }
     else if (generatorId === 3) { // Race
         wordBank1 = ["Aarakocra", "Aasimar", "Autognome", "Bugbear", "Centaur",
@@ -386,3 +400,6 @@ document.addEventListener('DOMContentLoaded', function () {
         aboutDarkImageElement.src = 'img/DarkMode/Storm-Giant.jpeg';
     });
 });
+  
+
+
