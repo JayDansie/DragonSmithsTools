@@ -239,14 +239,21 @@ figcaption {
 }
 
 .video-container {
-    /* Set the text to flex and wrap for all video container class members */
+    /* Center the text horizontally */
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+}
+
+.video-text {
+    /* Set the container for the centered paragraph */
+    text-align: center;
+    flex-basis: 100%;
 }
 
 .video-container p {
     /* Set the video paragraph positioning */
-    padding-left: 23%;
+    margin-left: 0%;
     text-align: center;
 }
 
@@ -255,7 +262,6 @@ figcaption {
     flex-basis: 50%;
     padding: 10px;
 }
-
 
 /* Generator Styles */
 #generator h2 {
