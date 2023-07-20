@@ -400,6 +400,3 @@ document.addEventListener('DOMContentLoaded', function () {
         aboutDarkImageElement.src = 'img/DarkMode/Storm-Giant.jpeg';
     });
 });
-  
-
-

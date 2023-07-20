@@ -110,6 +110,7 @@ nav ul li a {
     /* Set style of the theme buttons */
     display: flex;
     align-items:center;
+    margin-right: 0%;
 }
 
 #sunButton,
