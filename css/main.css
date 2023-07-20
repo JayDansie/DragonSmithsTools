@@ -1,4 +1,5 @@
 /* Changes Made:
+- MAJOR Adjustments to the centering of everything throughout the site
 - Adjusted margins and padding For Better Alignment
 - Adjusted font sizes and margins for better readability
 - Ensured css styles are grouped with labels for each section
@@ -16,6 +17,7 @@ body, ul {
 
 /* Overall layout styles */
 body {
+    /* Set the site up */
     padding: 20px;
     background-image: url('../img/YeOldPaperBackground.png');
     background-size: 100% auto;
@@ -49,8 +51,7 @@ header, h1 {
     font-size: 150%;
     text-align: center;
     font-family: 'Garamond', serif;
-    padding-right: 0px;
-    padding-left: 20px;
+    padding-right: 1.1%;
 }
 
 /* Menu Style */
@@ -105,10 +106,10 @@ nav ul li a {
 }
 
 /* Styles for the light theme/default button */
-#themeButtons {
+#Buttons {
     /* Set style of the theme buttons */
     display: flex;
-    align-items: center;
+    align-items:center;
 }
 
 #sunButton,
@@ -118,12 +119,6 @@ nav ul li a {
     background: transparent;
     border: none;
     cursor: pointer;
-    margin-right: -5px; /* Adjust the negative margin to move the buttons closer */
-}
-
-#moonButton {
-    /* Set bottom margin of the moon button */
-    margin-bottom: -6px; /* Adjust vertical alignment */
 }
 
 #sunButton.current-theme {
@@ -150,7 +145,6 @@ main h2, main p, main h3 {
 
 main h2 {
     /* Set the font positioning and size in h2 */
-    margin-left: 5%;
     padding-top: 2%;
     font-size: 40px;
 }
@@ -273,7 +267,8 @@ figcaption {
     /* Set the style for the generator-container */
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
+    margin-right: 4.5%;
 }
 
 .generator-content {
@@ -286,6 +281,7 @@ figcaption {
 .generator-content h3 {
     /* Set the font size and top margin of h3 */
     margin-top: 0;
+    margin-bottom: 0;
     font-size: 30px;
 }
 
@@ -297,7 +293,7 @@ figcaption {
 
 .generator-content button {
     /* Set the margins and positions of the generator buttons */
-    margin-top: 10px;
+    margin-top: 0px;
     margin-left: 10%;
     margin-bottom: 10%;
     padding: 8px 16px;
@@ -316,7 +312,7 @@ footer {
     /* Align and set the footer size */
     padding: 10px;
     text-align: center;
-    margin-left: 4%;
+    margin-left: 0%;
 }
 
 /* Media queries */
@@ -334,35 +330,30 @@ footer {
 
     header h1 {
         /* Set the header h1 margins for smaller screens */
-        margin-right: 14.5%;
+        margin-left: 2%;
     }
 
-    h1 {
-        /* Set the h1 margins for smaller screens */
-        margin-right: 6%;
-    }
-
-    main h2 {
-        /* Set the main h2 left margin for smaller screens */
-        margin-left: 5%;
+    #Buttons {
+        /* Adjust the button positions and sizes */
+        display: flex;
+        font-size: 20px;
     }
 
     main h3 {
         /* Set the main h3 left margin for smaller screens */
-        margin-left: 3%;
+        margin-left: 0%;
     }
 
     .image-column {
         /* Adjust the image position for smaller screens */
-        margin-left: 1.5%;
         grid-column: 1;
         margin-bottom: 20px;
     }
 
     main p {
         /* Set the position and font size of main p for smaller screens */
-        margin-left: 10%;
-        margin-right: 10%;
+        margin-left: 6%;
+        margin-right: 6%;
         font-family: 'Garamond', serif;
         font-size: 20px;
     }
@@ -403,29 +394,25 @@ footer {
         flex-basis: 100%;
     }
 
-    .video-container h3 {
+    .video-container h3{
         /* Adjust the video h3 left margin for smaller screens */
         margin-left: 10%;
     }
 
     .video-container p {
         /* Adjust the video p right margin for smaller screens */
-        margin-right: 30%;
+        margin-left: 6%;
     }
 
-    .generator-content {
-        /* Adjust the generator content flex for smaller screens */
-        flex-basis: 100%;
+    .generator-container {
+        /* Set the style for the generator-container */
+        display:block;
+        margin-right: 1%;
     }
 
     .generator-content button {
-        /* Adjust the generator button left margin for smaller screens */
-        margin-left: 3%;
-    }
-
-    .generator-content h3 {
-        /* Adjust the generator h3 right margin for smaller screens */
-        margin-right: 6%;
+        /* Set the margins and positions of the generator buttons */
+        margin-left: 1%;
     }
 }
 
