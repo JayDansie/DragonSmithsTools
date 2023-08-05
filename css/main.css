@@ -353,7 +353,11 @@ footer {
     #menuButton,
     #themeButton {
         /* Change button font size */
-        font-size: .8em;
+        font-size: .7em;
+    }
+
+    #menuButton {
+        padding-left: 0;
     }
 
     main h3 {
@@ -376,7 +380,10 @@ footer {
     .image-column {
         order: 2; /* Display the image column second */
         flex: 100%; /* Take the full width on small screens */
-        margin-right: 4%;
+        margin-left: 0; /* Center the image by setting the left margin to auto */
+        padding-left: 0;
+        max-width: calc(51px 1vw);
+        font-size: 1em;
     }
 
     main p {
