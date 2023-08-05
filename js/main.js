@@ -1,3 +1,5 @@
+// Written by Jay Dansie
+
 // Toggle sidebar
 const menuButton = document.getElementById("menuButton");
 const sidebar = document.getElementById("sidebar");
@@ -23,6 +25,9 @@ for (let i = 0; i < menuItems.length; i++) {
             current.classList.remove("current");
         }
         this.classList.add("current");
+
+        // Close the sidebar after a menu item is clicked
+        sidebar.classList.remove("open");
     });
 }
 
@@ -336,11 +341,10 @@ function generateSentence(generatorId) {
     }
 }
 
-// Theme switching functionality for theme Buttons
+// Theme switching functionality for theme Button
 document.addEventListener('DOMContentLoaded', function () {
     // Get the item IDs
-    const sunButton = document.getElementById('sunButton');
-    const moonButton = document.getElementById('moonButton');
+    const themeButton = document.getElementById('themeButton');
     const body = document.querySelector('body');
     const logoImage = document.querySelector('header img');
     const d4diceImage = document.getElementById('d4diceImage')
@@ -349,54 +353,68 @@ document.addEventListener('DOMContentLoaded', function () {
     const d10diceImage = document.getElementById('d10diceImage')
     const d12diceImage = document.getElementById('d12diceImage')
     const d20diceImage = document.getElementById('d20diceImage')
+    const submitBtn = document.getElementById('submitBtn');
     const homeImageElement = document.querySelector('#home .image-column img');
     const aboutImageElement = document.querySelector('#about .image-column img');
+    const visitorImageElement = document.querySelector('#visitorForm .image-column img');
     const homeDarkImageElement = document.querySelector('#home .image-column img');
     const aboutDarkImageElement = document.querySelector('#about .image-column img');
+    const visitorDarkImageElement = document.querySelector('#visitorForm .image-column img');
 
-    // Update Dice images
-  
-    sunButton.addEventListener('click', function () {
-        // Update the current theme
-        body.classList.remove('dark-theme');
-        sunButton.classList.add('current-theme');
-        moonButton.classList.remove('current-theme');
 
-        // Set the original logo image source
-        logoImage.src = 'img/DSToolsLogo.png'; 
-
-        // Update the Dice Images
-        d4diceImage.src = 'img/d4/d4.png';
-        d6diceImage.src = 'img/d6/d6.png';
-        d8diceImage.src = 'img/d8/d8.png';
-        d10diceImage.src = 'img/d10/d10.png';
-        d12diceImage.src = 'img/d12/d12.png';
-        d20diceImage.src = 'img/d20/d20.png';
-
-        //Change the home and about page src attributes
-        homeImageElement.src = 'img/DnDImage.jpg';
-        aboutImageElement.src = 'img/DnDMadMage.jpeg';
-    });
-  
-    moonButton.addEventListener('click', function () {
-        // Update the current theme
-        body.classList.add('dark-theme');
-        moonButton.classList.add('current-theme');
-        sunButton.classList.remove('current-theme');
-
-        // Set the dark-themed logo image source
-        logoImage.src = 'img/DarkMode/DSToolsDarkLogo.png'; 
-
-        // Update the Dice Images
-        d4diceImage.src = 'img/DarkMode/Darkd4/Darkd4.png';
-        d6diceImage.src = 'img/DarkMode/Darkd6/Darkd6.png';
-        d8diceImage.src = 'img/DarkMode/Darkd8/Darkd8.png';
-        d10diceImage.src = 'img/DarkMode/Darkd10/Darkd10.png';
-        d12diceImage.src = 'img/DarkMode/Darkd12/Darkd12.png';
-        d20diceImage.src = 'img/DarkMode/Darkd20/Darkd20.png';
-
-        //Change the home and about page src attributes
-        homeDarkImageElement.src = 'img/DarkMode/dnd_idrfm.jpeg';
-        aboutDarkImageElement.src = 'img/DarkMode/Storm-Giant.jpeg';
+    themeButton.addEventListener('click', function () {
+        if (themeButton.classList.contains('current-theme')) {
+            // Switch to light theme
+            body.classList.remove('dark-theme');
+            themeButton.classList.remove('current-theme');
+            submitBtn.classList.remove('current-theme');
+            themeButton.textContent = "\u2600"; // Sun symbol
+    
+            // Set the original logo image source
+            logoImage.src = 'img/DSToolsLogoDefault.png'; 
+    
+            // Update the Dice Images
+            d4diceImage.src = 'img/d4/d4.png';
+            d6diceImage.src = 'img/d6/d6.png';
+            d8diceImage.src = 'img/d8/d8.png';
+            d10diceImage.src = 'img/d10/d10.png';
+            d12diceImage.src = 'img/d12/d12.png';
+            d20diceImage.src = 'img/d20/d20.png';
+    
+            // Change the home and about page src attributes
+            homeImageElement.src = 'img/DnDImage.jpg';
+            aboutImageElement.src = 'img/DnDMadMage.jpeg';
+            visitorImageElement.src = 'img/DnD_Mythic_Odysseys.jpeg';
+        } else {
+            // Switch to dark theme
+            body.classList.add('dark-theme');
+            themeButton.classList.add('current-theme');
+            submitBtn.classList.add('current-theme');
+            themeButton.textContent = "\u263E"; // Moon symbol
+    
+            // Set the dark-themed logo image source
+            logoImage.src = 'img/DarkMode/DSToolsLogoDark.png'; 
+    
+            // Update the Dice Images
+            d4diceImage.src = 'img/DarkMode/Darkd4/Darkd4.png';
+            d6diceImage.src = 'img/DarkMode/Darkd6/Darkd6.png';
+            d8diceImage.src = 'img/DarkMode/Darkd8/Darkd8.png';
+            d10diceImage.src = 'img/DarkMode/Darkd10/Darkd10.png';
+            d12diceImage.src = 'img/DarkMode/Darkd12/Darkd12.png';
+            d20diceImage.src = 'img/DarkMode/Darkd20/Darkd20.png';
+    
+            // Change the home and about page src attributes
+            homeDarkImageElement.src = 'img/DarkMode/dnd_idrfm.jpeg';
+            aboutDarkImageElement.src = 'img/DarkMode/Storm-Giant.jpeg';
+            visitorDarkImageElement.src = 'img/DarkMode/DnD_Witchlight.jpg';
+        }
     });
 });
+
+
+// Visitor Form Page
+// Add event listener to call initValidation when the DOM is ready
+document.addEventListener("DOMContentLoaded", function() {
+    initValidation("myform");
+});
+

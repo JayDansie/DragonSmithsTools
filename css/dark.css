@@ -1,41 +1,25 @@
-/* Changes This Stylesheet Makes:
-- Updates the background image to a black and blue hand drawn background 
-    (The background is not pixelated, it is meant to look that way. I drew it myself)
-- Updates the logo to be white instead of black for visibility on the dark background
-- Updates the dice images to a blue set with white outlines (The dice images change with the theme)
-- Updates the content images on the home and about pages to match the new theme
-- Changes the Text and Button Icons to White for visibility
-- Changes the Content Box Background Color to Dark Grey
-- Changes the Home and About pages to have the image on the left instead of the right (on large screens)
-*/
+/* Written by Jay Dansie */
 
 /* Update the background color of main and header */
 body.dark-theme main,
-body.dark-theme header {
+body.dark-theme header, 
+body.dark-theme #visitorForm .form-item-flex input[type="text"],
+body.dark-theme #visitorForm .form-item-flex textarea,
+body.dark-theme .form-item-flex textarea {
     background-color: rgba(39, 39, 39, 0.5);
 }
 
-body.dark-theme #two-columns {
-    /* Set up grid to display content in two columns */
-    display: grid;
-    grid-template-columns: auto auto; /* Adjust the widths of the columns */
-}
-
+/* Set up the column that contains the image */
 body.dark-theme .image-column {
-    /* Set up the column that contains the image */
-    grid-column: 1;
-    grid-row: 1;
-    padding: 2%;
+    order: 1;
+    padding: 1.5%;
     padding-top: 0;
 }
 
+/* Set up the column that contains the image */
 body.dark-theme .text-column {
-    /* Set up the column that contains the text */
-    grid-column: 2;
-    padding: 0%;
-    padding-right: 10%;
-    margin: 0%;
-    margin-left: -10%; /* Adjust the negative margin to reduce space */
+    order: 2;
+    margin-right: 3%;
 }
 
 /* Update backgrouund image and change font color to white */
@@ -55,17 +39,10 @@ body.dark-theme .dark-theme {
     background-color: rgba(0, 0, 0, 0.9);
 }
 
-/* Update background color of the theme buttons when they are selected */
-body.dark-theme #moonButton.current-theme,
-body.dark-theme #sunButton.current-theme {
-    background-color: rgba(0, 0, 0, 0.5);
-}
-
 /* Update the button colors to white */
 body.dark-theme #menuButton,
 body.dark-theme #closeButton,
-body.dark-theme #sunButton,
-body.dark-theme #moonButton {
+body.dark-theme #themeButton {
     color: white;
 }
 
@@ -76,7 +53,10 @@ body.dark-theme #sidebar {
 
 /* Update the text color to white in the menu */
 body.dark-theme #sidebar nav ul li a,
-body.dark-theme #sidebar nav ul li a.menu-item.current {
+body.dark-theme #sidebar nav ul li a.menu-item.current,
+body.dark-theme #visitorForm .form-item-flex input[type="text"],
+body.dark-theme #visitorForm .form-item-flex textarea,
+body.dark-theme .form-item-flex textarea {
     color: white;
 }
 
@@ -91,19 +71,35 @@ body.dark-theme a {
     color: rgb(128, 0, 255); /* Set the desired link color in hexadecimal, RGB, or color name */
 }
 
+/* Style the Submit Button in Dark Mode */
+body.dark-theme #submitBtn.current-theme {
+    background-color: #6b97f6;
+    color: #ffffff;
+}
+
+/* Make Submit Button Change Color when Hovered */
+body.dark-theme #submitBtn:hover.current-theme {
+    background-color: #6e82d2;
+}
+
 /* Media queries */
 @media (max-width: 768px) {
+    #two-columns {
+        /* Set up the two columns to be 1 column */
+        flex-wrap: wrap;
+    }
+    
     body.dark-theme .text-column {
-        /* Adjust the image position for smaller screens */
-        padding: 0px;
-        margin-left: 0%;
-        grid-column: 1;
-        grid-row: 1;
-        margin-bottom: 20px;
+        order: 1; /* Display the text column first */
+        flex: 100%; /* Take the full width on small screens */
+        margin-bottom: 20px; /* Add some space between the columns */
+        margin-left: 4%;
     }
 
     body.dark-theme .image-column {
-        /* Adjust the image position for smaller screens */
-        grid-row: 2;
+        order: 2; /* Display the image column second */
+        flex: 100%; /* Take the full width on small screens */
+        margin-left: 4%;
     }
+
 }
