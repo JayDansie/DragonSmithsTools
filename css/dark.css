@@ -20,14 +20,11 @@ body.dark-theme .form-item-flex textarea {
 /* Set up the column that contains the image */
 body.dark-theme .image-column {
     order: 1;
-    padding: 1.5%;
-    padding-top: 0;
 }
 
 /* Set up the column that contains the image */
 body.dark-theme .text-column {
     order: 2;
-    margin-right: 3%;
 }
 
 /* Update backgrouund image and change font color to white */
@@ -92,22 +89,12 @@ body.dark-theme #submitBtn:hover.current-theme {
 
 /* Media queries */
 @media (max-width: 768px) {
-    #two-columns {
-        /* Set up the two columns to be 1 column */
-        flex-wrap: wrap;
-    }
-    
     body.dark-theme .text-column {
         order: 1; /* Display the text column first */
-        flex: 100%; /* Take the full width on small screens */
-        margin-bottom: 20px; /* Add some space between the columns */
-        margin-left: 4%;
     }
 
     body.dark-theme .image-column {
         order: 2; /* Display the image column second */
-        flex: 100%; /* Take the full width on small screens */
-        margin-left: 4%;
-    }
 
+    }
 }
