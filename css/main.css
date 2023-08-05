@@ -353,7 +353,7 @@ footer {
     #menuButton,
     #themeButton {
         /* Change button font size */
-        font-size: .7em;
+        font-size: 5vw;
     }
 
     #menuButton {
