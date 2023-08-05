@@ -1,0 +1,179 @@
+/* Written by Jay Dansie */
+
+/* Adding margin to the pseudo-element before specific labels */
+#visitorForm li:nth-of-type(2) label:before,
+#visitorForm li:nth-of-type(3) label:before,
+#visitorForm li:nth-of-type(4) label:before,
+#visitorForm li:nth-of-type(5) label:before,
+#visitorForm li:nth-of-type(6) label:before,
+#visitorForm li:nth-of-type(7) label:before,
+#visitorForm li:nth-of-type(8) label:before,
+#visitorForm li:nth-of-type(9) label:before,
+#visitorForm li:nth-of-type(10) label:before { /* Avoiding the first list item */
+    content: "";
+    display: block;
+    height: 20px;
+}
+
+/* Make the Labels bold */
+#visitorForm li:nth-of-type(1) label,
+#visitorForm li:nth-of-type(2) label,
+#visitorForm li:nth-of-type(3) label,
+#visitorForm li:nth-of-type(4) label,
+#visitorForm li:nth-of-type(5) label,
+#visitorForm li:nth-of-type(6) label,
+#visitorForm li:nth-of-type(7) label,
+#visitorForm li:nth-of-type(8) label,
+#visitorForm li:nth-of-type(9) label,
+#visitorForm li:nth-of-type(10) label,
+#visitorForm li:nth-of-type(15) label { 
+    font-weight: bold;
+}
+
+/* Adjust the size and position of h2 */
+#visitorForm h2 {
+    padding-top: 2%;
+    font-size: 40px;
+}
+
+/* Remove the bullets from the list */
+#visitorForm ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Style form elements inside the form-container */
+#visitorForm input[type="text"],
+#visitorForm textarea {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%; /* Set width to 100% to fill available space */
+}
+
+/* Style the Submit Button */
+#visitorForm .submitBtn {
+    font-size: 25px;
+    font-family: 'Garamond', serif;
+    font-weight: bold;
+    padding: 8px 15px;
+    background-color: #d2a36e;
+    color: #000000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* Make Button Change Color when Hovered */
+#visitorForm .submitBtn:hover {
+    background-color: #aa8458;
+}
+
+/* Style error messages inside the form-container */
+#visitorForm .errorMsg {
+    color: red;
+    font-size: 12px;
+    font-family: 'Garamond', serif;
+    margin-top: 5px;
+}
+
+/* Style valid and invalid fields inside the form-container */
+/* Valid Style */
+#visitorForm input:valid,
+#visitorForm textarea:valid {
+    border: 1px solid green;
+    margin-bottom: 5px;
+}
+/* Invalid Style */
+#visitorForm input:invalid,
+#visitorForm textarea:invalid {
+    border: 1px solid red;
+}
+
+/* Show error messages for invalid fields inside the form-container */
+#visitorForm input:invalid ~ .errorMsg,
+#visitorForm textarea:invalid ~ .errorMsg {
+    display: block;
+}
+
+/* Hide the Error Message if Input is Valid */
+#visitorForm input:valid ~ .errorMsg,
+#visitorForm textarea:valid ~ .errorMsg {
+    display: none;
+}
+
+/* Center the Success message */
+.success-wrapper {
+    margin-top: 5%;
+    margin-left: 6%;
+    padding-left: 5%;
+    display: flex;
+    justify-content: center;
+}
+
+/* Style the Success message */
+#success {
+    display: none;
+    font-size: 35px;
+    font-family: 'Garamond', serif;
+    font-weight: bold;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Set up the flex container for labels and inputs */
+#visitorForm .form-item-flex {
+    display: flex;
+    margin-left: 6%;
+    padding-left: 5%;
+    text-align: start;
+    font-size: 20px;
+}
+
+/* Adjust the style of inputs */
+#visitorForm .form-item-flex input[type="text"],
+#visitorForm .form-item-flex textarea {
+    display: flex;
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    font-size: 20px;
+    font-family: 'Garamond', serif;
+    box-sizing: border-box; /* Ensure padding doesn't affect total width */
+    background-color: rgba(235, 235, 235, 0.5);
+}
+
+/* Asjust the paragraph centering */
+#visitorForm p {
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0;
+}
+
+/* Add media query for responsive layout on smaller screens */
+@media (max-width: 768px) {
+    /* On smaller screens, set the width to 100% to stack the elements */
+    #visitorForm .form-item-flex {
+        width: 100%;
+        padding-left: 5%;
+        padding-right: 5%;
+        margin-left: 0;
+    }
+
+    /* Reset the label width to make it full-width on smaller screens */
+    #visitorForm .form-item-flex label {
+        width: 100%;
+        margin-bottom: 5px; /* Add some spacing between label and input on smaller screens */
+    }
+
+    /* Center the Success message for smaller screens */
+    .success-wrapper {
+        margin-top: 0;
+        margin-left: 0;
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+}

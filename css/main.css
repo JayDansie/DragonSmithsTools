@@ -1,13 +1,4 @@
-/* Changes Made:
-- MAJOR Adjustments to the centering of everything throughout the site
-- Adjusted margins and padding For Better Alignment
-- Adjusted font sizes and margins for better readability
-- Ensured css styles are grouped with labels for each section
-- Added notes about the functionality for each css item
-- Added styles for the theme switching buttons
-- Updated the Links to all be funtional instead of plain text
-- Adjusted link color to match the theme better
-*/
+/* Written by Jay Dansie */
 
 /* Reset some default styles */
 body, ul {
@@ -31,52 +22,71 @@ body a {
 }
 
 /* Header styles */
+/* Style the header */
 header {
-    /* Adjust the content positioning and set the background color */
     display: flex;
     align-items: center;
     justify-content: space-between;
     background-color: rgba(235, 235, 235, 0.5);
-    padding: 20px;
+    padding: 3%;
+    padding-top: 1.5%;
+    padding-bottom: 1.5%;
 }
 
+/* Set header img size */
 header img {
-    /* Size of the header image */
-    width: 100px;
-    height: 68px;
+    width: 8%;
+    height: auto;
 }
 
-header, h1 {
-    /* Adjust the text appearance and positioning */
+/* Style the website title */
+header,
+h1 {
     font-size: 150%;
     text-align: center;
     font-family: 'Garamond', serif;
-    padding-right: 1.1%;
 }
 
-/* Menu Style */
-#menuButton, #closeButton {
-    /* Set the background, font size, and position of the menu and close buttons */
-    font-size: 24px;
+/* BUTTON STYLES */
+#Buttons {
+    display: flex;
+    width: 8%;
+}
+
+/* Menu + Close Button Styles */
+#menuButton,
+#themeButton {
+    font-size: 1.5em;
     background: transparent;
     border: none;
     cursor: pointer;
     float: right;
 }
 
+/* Style the close button */
+#closeButton {
+    display: flex;
+    font-size: 2em;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    float: right;
+}
+
+/* Set the size, color, and animation of the side bar */
 #sidebar {
-    /* Set the size, color, and animation of the side bar */
     position: fixed;
     top: 0;
     right: -300px;
     width: 300px;
     height: 100%;
+    font-size: 1.4em;
     background-color: rgba(235, 235, 235, 0.9);
     transition: right 0.3s ease;
 }
 
+/* Set the position of the sidebar when it is open */
 #sidebar.open {
-    /* Set the position of the sidebar when it is open */
     right: 0;
 }
 
@@ -104,34 +114,6 @@ nav ul li a {
     color: #333;
     padding: 5px;
 }
-
-/* Styles for the light theme/default button */
-#Buttons {
-    /* Set style of the theme buttons */
-    display: flex;
-    align-items:center;
-    margin-right: 0%;
-}
-
-#sunButton,
-#moonButton {
-    /* Set font size, background, and position of the theme buttons */
-    font-size: 24px;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-}
-
-#sunButton.current-theme {
-    /* Set background color of the sun button if it is selected */
-    background-color: rgba(255, 255, 255, 0.5);
-}
-
-#moonButton.current-theme {
-    /* Set background color of the moon button if it is selected */
-    background-color: rgba(0, 0, 0, 0.5);
-}
-
 
 /* Main styles */
 main {
@@ -162,22 +144,37 @@ main img {
     margin-right: 96px;
 }
 
+
+
+/* Set the form to be displayed in 2 columns */
 #two-columns {
-    /* Set up a grid to display content in collumns */
-    display: grid;
+    display: flex;
+    justify-content: space-between;
 }
 
+/* Set the column styling and sizing */
+.text-column,
 .image-column {
-    /* Set up the column that contains the image */
-    grid-column: 2;
-    display: flex;
-    flex-direction: column;
-    padding: 2%;
+    padding: 1.5%;
     padding-top: 0;
+    box-sizing: border-box;
+}
+
+.text-column{
+    flex: .85;
+    padding: 0;
+    padding-right: 2%;
+}
+.image-column {
+    flex: 1.15;
+    padding: 1.5%;
+    padding-left: 5%;
+    padding-top: 0%;
 }
 
 .image-column img {
     /* Set the image size and margins */
+    justify-content: left;
     width: 100%;
     height: auto;
     margin-right: 5%;
@@ -308,6 +305,7 @@ figcaption {
     margin-top: 20px;
 }
 
+
 /* Footer styles */
 footer {
     /* Align and set the footer size */
@@ -325,23 +323,19 @@ footer {
 
     header img {
         /* Set the header image size for smaller screens */
-        width: 80px;
-        height: 48px;
-    }
-
-    header h1 {
-        /* Set the header h1 margins for smaller screens */
-        margin-left: 1%;
+        width: 15%;
+        height: auto;
     }
 
     #Buttons {
-        /* Adjust the button positions and sizes */
-        display: flex;
-        font-size: 20px;
+        /* Change button size */
+        width: 15%;
     }
-
-    #sunButton, #moonButton {
-        margin-right: -6px;
+    
+    #menuButton,
+    #themeButton {
+        /* Change button font size */
+        font-size: 100%;
     }
 
     main h3 {
@@ -349,15 +343,27 @@ footer {
         margin-left: 0%;
     }
 
+    #two-columns {
+        /* Set up the two columns to be 1 column */
+        flex-wrap: wrap;
+    }
+    
+    .text-column {
+        order: 1; /* Display the text column first */
+        flex: 100%; /* Take the full width on small screens */
+        margin-bottom: 20px; /* Add some space between the columns */
+        margin-left: 2.5%;
+    }
+
     .image-column {
-        /* Adjust the image position for smaller screens */
-        grid-column: 1;
-        margin-bottom: 20px;
+        order: 2; /* Display the image column second */
+        flex: 100%; /* Take the full width on small screens */
+        margin-right: 4%;
     }
 
     main p {
         /* Set the position and font size of main p for smaller screens */
-        margin-left: 6%;
+        margin-left: 7%;
         margin-right: 6%;
         font-family: 'Garamond', serif;
         font-size: 20px;

@@ -25,6 +25,10 @@ The "How to Play D&D" page features 6 videos that can be helpful to people who a
 learning how to play D&D. There is also a link at the bottom of the page to the 
 D&D Player's Handbook, in case the user doesn't have access to a copy of the book.
 
+The "Visitor Form" page provides a form for the user to fill out their personal
+information as if they are logging their visit to the page. This information is
+not collected or stored, it is simply for fun.
+
 The "About" page lists the legallitys of the website.
 
 To run this webiste, run index.html, or visit https://jaydansie.github.io/JayDansieDSTools.github.io/
@@ -39,21 +43,21 @@ To run this webiste, run index.html, or visit https://jaydansie.github.io/JayDan
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/dark.css" id="theme-stylesheet">
+    <link rel="stylesheet" href="css/form.css">
     <title>Dragon Smith's Tools</title>
 </head>
 
 <body>
     <header>
         <!-- Build the Page Header -->
-        <img src="img/DSToolsLogo.png" alt="Logo">
+        <img src="img/DSToolsLogoDefault.png" alt="Logo">
         <h1>Dragon Smith's Tools</h1>
         <div id="Buttons">
-            <button id="sunButton">&#9728;</button>
-            <button id="moonButton">&#9790;</button>
+            <button id="themeButton">&#9728;</button>
             <button id="menuButton">&#9776;</button>
         </div>
     </header>
-    
+      
 
     <div id="sidebar"> <!-- Build the Pull Out Menu -->
         <button id="closeButton">&times;</button>
@@ -63,6 +67,7 @@ To run this webiste, run index.html, or visit https://jaydansie.github.io/JayDan
                 <li><a href="#roller" class="menu-item">Dice Roller</a></li>
                 <li><a href="#generator" class="menu-item">Generators</a></li>
                 <li><a href="#videos" class="menu-item">How To Play D&D</a></li>
+                <li><a href="#visitorForm" class="menu-item">Visitor Form</a></li>
                 <li><a href="#about" class="menu-item">About</a></li>
             </ul>
         </nav>
@@ -95,8 +100,8 @@ To run this webiste, run index.html, or visit https://jaydansie.github.io/JayDan
                 </div>
                 <div class="image-column">
                     <figure>
-                        <img src="img/DnDImage.jpg" alt="Image">
-                        <figcaption>Wizards of The Coast LLC. Artwork. Dungeons &amp; Dragons. Retrieved July 19, 2023, from <a href>https://dnd.wizards.com/media-gallery.</a></figcaption>
+                        <img src="img/DnDImage.jpg" alt="D&D Art">
+                        <figcaption>Wizards of The Coast LLC. Artwork. Dungeons &amp; Dragons. Retrieved July 19, 2023, from <a href>https://dnd.wizards.com/media-gallery</a></figcaption>
                     </figure>
                 </div>
             </div>
@@ -257,6 +262,131 @@ To run this webiste, run index.html, or visit https://jaydansie.github.io/JayDan
             </div>
         </section>
 
+        <!-- VISITOR FORM -->
+        <section id="visitorForm">
+            <h2>Visitor Form</h2>
+            <div id="two-columns">
+                <div class="text-column">
+                    <form id="myform" class="form-item-flex" novalidate>
+                        <ul>
+                            <p><b>NOTICE:</b> This page is just for fun. Your personal info will not be shared or saved.</p>
+                            <!-- Personal Information Section -->
+                
+                            <!-- First Name -->
+                            <li>
+                                <label for="firstName">First Name:</label>
+                                <input type="text" id="firstName" name="firstName" placeholder="Enter your first name here" required>
+                                <div class="errorMsg"></div>
+                            </li>
+                
+                            <!-- Last Name -->
+                            <li>
+                                <label for="lastName">Last Name:</label>
+                                <input type="text" id="lastName" name="lastName" placeholder="Enter your last name here" required>
+                                <div class="errorMsg"></div>
+                            </li>
+
+
+                            <!-- Address (req, validate using 'checkRequired' function) -->
+                            <li >
+                                <label for="address">Address:</label>
+                                <input type="text"  id="address" name="address" placeholder="Enter your address here" required>
+                                <div class="errorMsg"></div>
+                            </li>
+
+                            <!-- City (req, validate using 'checkRequired' function)-->
+                            <li >
+                                <label for="city">City:</label>
+                                <input type="text"  id="city" name="city" placeholder="Enter your city here" required>
+                                <div class="errorMsg"></div>
+                            </li>
+
+                            <!-- State (min/max two chars)  (req, validate using 'checkRequired' function) -->
+                            <li >
+                                <label for="state">State:</label>
+                                <input type="text"  id="state" name="state" placeholder="Enter your state here" required>
+                                <div class="errorMsg"></div>
+                            </li>
+
+                            <!-- Zip  (req, custom validation using javascript regex, 'checkFormat' function in validation.js) -->
+                            <li >
+                                <label for="zip">Zip:</label>
+                                <input type="text"  id="zip" name="zip" placeholder="Enter your zip code here" required>
+                                <div class="errorMsg"></div>
+                            </li>
+
+                            <!-- Cell Phone  (req, custom validation using javascript regex, 'checkFormat' function in validation.js) -->
+                            <li>
+                                <label for="phone">Phone:</label>
+                                <input type="text" id="phone" placeholder="Enter your phone here" required>
+                                <div class="errorMsg"></div>
+                            </li>
+
+                            <!-- Email Address (req, custom validation using javascript regex, 'checkFormat' function in validation.js) -->
+                            <li >
+                                <label for="email">Email:</label>
+                                <input type="text" label="Email:" id="email" name="email" placeholder="Enter your email here" required>
+                                <div class="errorMsg"></div>
+                            </li>
+                
+                            <!-- How did you find my page? -->
+                            <li>
+                                <label for="findPage">How did you find my page?</label>
+                            </li>
+                            <!-- How did you find my page: Checkbox Group -->
+                            <li>
+                                <li class="checkbox-group">
+                                    <input type="checkbox" id="internet" name="source" value="Internet">
+                                    <label for="internet">Internet</label>
+                                </li>
+                                <li class="checkbox-group">
+                                    <input type="checkbox" id="friend" name="source" value="Friend">
+                                    <label for="friend">Friend</label>
+                                </li>
+                                <li class="checkbox-group">
+                                    <input type="checkbox" id="tiktok" name="source" value="TikTok">
+                                    <label for="tiktok">TikTok</label>
+                                </li>
+                                <li class="checkbox-group">
+                                    <input type="checkbox" id="insta" name="source" value="Instagram">
+                                    <label for="insta">Instagram</label>
+                                </li>
+                                <!-- Error message for checkbox group -->
+                                <div class="errorMsg" id="findPageErrorMsg"></div>
+                            </li>
+  
+                
+                            <!-- Text Area for Comments -->
+                            <li>
+                                <label id="comments-label" for="comments"><br>Comments: (optional)</label>
+                                <textarea id="comments" name="comments" placeholder="Enter your comments here"></textarea>
+                            </li>
+                
+                            <!-- Submit Button -->
+                            <li>
+                                <button id="submitBtn" class="submitBtn" type="submit">Submit</button>
+                            </li>
+                        </ul>
+                    </form>
+                
+                    <!-- Success message -->
+                    <div class="success-wrapper">
+                        <div id="success" class="successMsg" style="display: none;">
+                            Thank you for logging your visit!
+                        </div>
+                    </div>
+                </div>
+
+                <div class="image-column">
+                    <!-- Add image For Form Page -->
+                    <figure>
+                        <img src="img/DnD_Mythic_Odysseys.jpeg" alt="D&D Art">
+                        <figcaption>Wizards of The Coast LLC. Artwork. Dungeons &amp; Dragons. Retrieved August 4, 2023, from <a href>https://dnd.wizards.com/media-gallery</a></figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
         <!-- ABOUT -->
         <section id="about">
             <h2>About</h2>
@@ -267,13 +397,15 @@ To run this webiste, run index.html, or visit https://jaydansie.github.io/JayDan
                         Dragon Smith's Tools does not possess copywriting privileges of the names "Dungeons & Dragons" and "D&D"<br>
                         Dragon Smith's Tools is a personal project for personal use and college class assignment purposes.<br>
                         Dragon Smith's Tools does not sell your data, nor does it receive monetary gains.<br><br>
-                        All videos and linked content on Dragon Smith's Tools belong to their respected owners<br>
-                        Home page image (Light Mode): Wizards of The Coast LLC. (2021). Dungeons &amp; Dragons. Retrieved July 19, 2023, from <a href>https://dnd.wizards.com/media-gallery.</a><br>
-                        Home page image (Dark Mode): Wizards of The Coast LLC. (2020). Dungeons &amp; Dragons. Retrieved July 19, 2023, from <a href>https://dnd.wizards.com/media-gallery.</a><br>
-                        About page image (Light Mode): Wizards of The Coast LLC. (2018). Dungeons &amp; Dragons. Retrieved July 19, 2023, from <a href>https://dnd.wizards.com/media-gallery.</a><br>
-                        About page image (Dark Mode): Wizards of The Coast LLC. (2016). Dungeons &amp; Dragons. Retrieved July 19, 2023, from <a href>https://dnd.wizards.com/media-gallery.</a><br><br>
+                        All videos and linked content on Dragon Smith's Tools belong to their respected owners:<br>
+                        Home page image (Light Mode): Wizards of The Coast LLC. (2021). Dungeons &amp; Dragons. Retrieved July 19, 2023, from <a href>https://dnd.wizards.com/media-gallery</a><br>
+                        Home page image (Dark Mode): Wizards of The Coast LLC. (2020). Dungeons &amp; Dragons. Retrieved July 19, 2023, from <a href>https://dnd.wizards.com/media-gallery</a><br>
+                        About page image (Light Mode): Wizards of The Coast LLC. (2018). Dungeons &amp; Dragons. Retrieved July 19, 2023, from <a href>https://dnd.wizards.com/media-gallery</a><br>
+                        About page image (Dark Mode): Wizards of The Coast LLC. (2016). Dungeons &amp; Dragons. Retrieved July 19, 2023, from <a href>https://dnd.wizards.com/media-gallery</a><br>
+                        Vistor Form page image (Light Mode): Wizards of The Coast LLC. (2020). Dungeons &amp; Dragons. Retrieved August 4, 2023, from <a href>https://dnd.wizards.com/media-gallery</a><br>
+                        Visitor Form page image (Dark Mode): Wizards of The Coast LLC. (2021). Dungeons &amp; Dragons. Retrieved August 4, 2023, from <a href>https://dnd.wizards.com/media-gallery</a><br><br>
                         Dragon Smith's Tools Website designed by Jay Dansie.<br>
-                        Dragon Smith's Tools Logo Art, designed by Jay Dansie (with an AI-Generated sword image).<br>
+                        Dragon Smith's Tools Logo Art, designed by Jay Dansie.<br>
                         Dragon Smith's Tools Dice Set Art, designed by Jay Dansie.<br>
                         Dragon Smith's Tools Background Art, designed by Jay Dansie.<br>
                         Dragon Smith's Tools Name and Loot Generators made by Jay Dansie, with word bank assistance from Melanie Gomez, Katelyn Hollinger, and Lucile Ormond.<br><br>
@@ -282,13 +414,11 @@ To run this webiste, run index.html, or visit https://jaydansie.github.io/JayDan
                 </div>
                 <div class="image-column">
                     <figure>
-                        <img src="img/DnDMadMage.jpeg" alt="Image">
-                        <figcaption>Wizards of The Coast LLC. Artwork. Dungeons &amp; Dragons. Retrieved July 19, 2023, from <a href>https://dnd.wizards.com/media-gallery.</a></figcaption>
+                        <img src="img/DnDMadMage.jpeg" alt="D&D Art">
+                        <figcaption>Wizards of The Coast LLC. Artwork. Dungeons &amp; Dragons. Retrieved July 19, 2023, from <a href>https://dnd.wizards.com/media-gallery</a></figcaption>
                     </figure>
                 </div>
             </div>
-
-
         </section>
     </main>
 
@@ -297,5 +427,7 @@ To run this webiste, run index.html, or visit https://jaydansie.github.io/JayDan
     </footer>
 
     <script src="js/main.js"></script>
+    <script src="js/validation.js"></script>
 </body>
+
 </html>
