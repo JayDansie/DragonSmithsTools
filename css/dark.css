@@ -38,7 +38,7 @@ body.dark-theme {
 
 /* Update the logo to the white version */
 body.dark-theme header img {
-    content: url('../img/DarkMode/DSToolsDarkLogo.png');
+    content: url('../img/DarkMode/DSToolsLogoDark.png');
 }
 
 /* Update background and font colors */
