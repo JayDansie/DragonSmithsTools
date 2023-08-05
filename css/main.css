@@ -1,5 +1,16 @@
 /* Written by Jay Dansie */
 
+/* 
+Changes Made:
+- Modified theme buttons to be one button instead of 2
+- Got rid of button background color
+- Adjusted side bar styling
+- Adjusted text sizes
+- Adjusted Header Positioning
+- Major adjustments to two-collumn formatting (much cleaner now)
+- Added Comments
+*/
+
 /* Reset some default styles */
 body, ul {
     margin: 0;
