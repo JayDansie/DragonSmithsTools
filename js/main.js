@@ -1,5 +1,13 @@
 // Written by Jay Dansie
 
+/* 
+Changes Made:
+- Added form events
+- Added image adjustments for form page on dark/light modes
+- Adjusted sun and moon button features to work for just 1 button
+- Adjusted theme button to have its symbol change depending on the mode
+*/
+
 // Toggle sidebar
 const menuButton = document.getElementById("menuButton");
 const sidebar = document.getElementById("sidebar");

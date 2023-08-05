@@ -1,5 +1,13 @@
 /* Written by Jay Dansie */
 
+/* 
+Changes Made:
+- Added dark theme for submit form button
+- Adjusted form text for dark theme
+- Adjusted form input box styles for dark theme
+- Repaired Dark theme centering inconveniences
+*/
+
 /* Update the background color of main and header */
 body.dark-theme main,
 body.dark-theme header, 
