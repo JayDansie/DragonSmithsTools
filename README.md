@@ -5,12 +5,12 @@ https://jaydansie.github.io/DragonSmithsTools/
 
 Tools currently offered on this site:
 
-~ Digital Dice Roller ~
+Digital Dice Roller
   - includes d4, d6, d8, d10, d12, and d20
 
-~ Randomized Generators ~
+Randomized Generators
 
-  -> Generators for character building:
+  Generators for character building:
   
       - Feminine Name Generator
       - Masculine Name Generator
@@ -19,14 +19,14 @@ Tools currently offered on this site:
       - Background Generator
       - Alignment Generator
       
-  -> Foraging Generators:
+  Foraging Generators:
   
       - Grassland and Forest Foraged Loot Generator
       - Rocky Terrain Foraged Loot Generator
       - Aquatic Foraged Loot Generator
       - Cave Foraged Loot Generator
 
-~ Resources For Learning to Play D&D ~
+Resources For Learning to Play D&D
   - Embedded videos from the "Tabletop Terrors" series entitled "Learn to Play D&D"
   - Link to another site that offers an online pdf of the D&D 5e Handbook
 
