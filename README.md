@@ -1,6 +1,6 @@
-Dragon Smith's Tools is a site that offers a few tools for Dungeons & Dragons enthusiasts
+Dragon Smith's Tools is a site that offers a few handy tools for Dungeons & Dragons enthusiasts
 
-The Github Pages Website for Dragon Smith's Tools can be accessed at:
+The GitHub Pages Website for Dragon Smith's Tools can be accessed at:
 https://jaydansie.github.io/DragonSmithsTools/ 
 
 Tools currently offered on this site:
@@ -27,4 +27,4 @@ Other Site Features:
   - Light and Dark mode (can be toggled by pressing the sun/moon button)
   - Mobile and Desktop Friendly Interface
   - Visitor Form with Simple Data Validation
-      (No data is actually collected by this form, it is purely for fun)
+      (No data is collected by this form, it is purely for fun)
