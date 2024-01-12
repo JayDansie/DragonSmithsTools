@@ -9,14 +9,18 @@ Tools currently offered on this site:
   - includes d4, d6, d8, d10, d12, and d20
 
 ~ Randomized Generators ~
+
   -> Generators for character building:
+  
       - Feminine Name Generator
       - Masculine Name Generator
       - Race Generator
       - Class Generator
       - Background Generator
       - Alignment Generator
+      
   -> Foraging Generators:
+  
       - Grassland and Forest Foraged Loot Generator
       - Rocky Terrain Foraged Loot Generator
       - Aquatic Foraged Loot Generator
